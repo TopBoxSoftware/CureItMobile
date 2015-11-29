@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+         <link href = "swiper.min.css" />
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script src="sweetalert-dev.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+       
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                              ['Adenocarcinomas', 95],
+                              ['Not Adenocarcinomas', 5]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#0D47A1', '#F7464A' ]}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+        <script type = "text/javascript">
+            jQuery(document).ready(function($){
+                incrementDisease("colorectal");
+            });
+        </script>
+		
+    </head>
+	
+    <body onLoad = "init_disease_page()" class = "first_main_color" id = "the_body">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Colorectal Cancers</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+            
+		<span id = "full_wrapper_complete_no_effect">
+	        <span id = "full_wrapper">
+	       <!--     <div class="box header_size_large" id = "head">colo Cancer</div>
+	              <br /><br />
+                <span class = "gray_sub_header">Over 28 people are diagnosed with colo Cancer every day in the UK alone.</span>
+	           -->
+          
+			  <div class="swiper-container">
+                  
+        <div class="swiper-wrapper">
+			<div id = "first_preview_pane"></div>
+			
+            <span class="swiper-slide">
+			<div id = "disease_header">Colorectal</div>
+			
+			<div id = "content_holder">
+			<span id = "fact">There are over 1.2 million people with a history of colorectal cancer alive today</span><br />
+			
+            <div id = "index_button" style = "top:12vh;" onClick = "swiper.slideTo(4, 1000);" onTouchEnd = "run()">Types of Colorectal Cancer</div>
+            <div id = "index_button" style = "top:31vh;" onClick = "swiper.slideTo(6, 1000);" onTouchEnd = "run()">Medical Advancements</div>
+            <div id = "index_button" style = "top:50vh;" onClick = "swiper.slideTo(8, 1000);" onTouchEnd = "run()">How to Help</div>
+            
+			</div>
+			
+                
+                
+                
+                
+                
+                
+                
+			
+                
+                
+                
+                
+                
+                
+                
+			</span>
+            <span class="swiper-slide" id = "second_main_color">
+				<span id = "title">Introduction (1/3)</span>
+				<div id = "content_holder" style = "top:94vh;">
+                    Colorectal Cancers are cancers that start in either the colon or rectum. They are often grouped together due to the similarities that they share with one another.  
+                    <br />
+                    <br />
+                    There are several different types of Colorectal Cancers, each with their own properties that warrant individualized attention. 
+                  <br />
+                  <br />
+                  The three that we will be taking a look at are Adenocarcinomas, Sarcomas, and Carcinoid tumors.
+                </div>
+				
+			</span>
+            <div class="swiper-slide" id = "third_main_color">
+                <span id = "title" style = "top:168vh">Introduction (2/3)</span>
+                <div id = "content_holder" style = "top:176vh;">
+                    Colorectal Cancers are often very preventable due to the relatively predictable way in which they develop. The vast majority of Colorectal Cancers begin as a polyp, which typically begin developing in the inner lining of the colon or rectum. Some of these polyps will develop into Colorectal Cancer if left untreated.
+                    <br />
+                    <br />
+                    This means that one of the best ways to prevent Colorectal Cancers is to remove these polyps early. Recent advancements in technology have brought with them <span class = "link" onClick = "window.open('http://www.cancer.org/cancer/colonandrectumcancer/detailedguide/colorectal-cancer-detection', '_blank', 'location=yes');">an enhanced understanding</span> of how to do this, something which has been useful in somewhat quelling the threat of Colorectal Cancers. 
+                      
+                   
+                    </div>
+                
+                
+                </div>
+            <div class="swiper-slide" id = "fourth_main_color">
+                <span id = "title" style = "top:251vh;">Introduction (3/3)</span>
+                <div id = "content_holder" style = "top:259vh;">
+                    Below is a chart that details the percent occurance of the most common form of Colorectal Cancer, Adenocarcinomas. 
+                    <div id="chart_div" style = "position:relative;top:-45px;"></div>
+                    
+                     <span id = "center_relative" class = "style" style = "position:relative;top:-85px;">
+                        
+						<span id = "chart_text" style = "color:#0D47A1;margin-right:35px;">Adenocarcinomas</span>
+                        <span id = "chart_text" style = "color:#F7464A">Others</span>
+                    </span>
+                    
+                    
+                    
+                </div>
+                
+                
+                
+            </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                <span id = "title" style = "top:334vh;">Types of Cancer (1/2)</span>
+                <div id = "content_holder" style = "top:344vh;">
+                    
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Adenocarcinomas</span><br />
+                    </span>
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                    Adenocarcinomas are by far the most common form of Colorectal Cancer, claiming <span class = "link" onClick = "window.open('http://www.cancerresearchuk.org/about-cancer/type/bowel-cancer/about/types-of-bowel-cancer', '_blank', 'location=yes');">95 percent</span> of diagnosal cases. 
+                        <br /><br />
+                        This form of cancer often begins in the inner layer of the bowel before spreading into other, deeper layers. Because of this, early detection and treatment is essential in terms of ensuring that the cancer does not become life threatening. 
+                        <br />
+                        <br />
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button" style = "top:398vh;" onClick = 'learn_more("colo_first")'>Learn More<span>
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+            
+            <span id = "title" style = "top:416vh;">Types of Cancer (2/2)</span>
+            <div id = "content_holder" style = "top:426vh;">
+                <span class = "center_inline">
+                    <span id = "fact" class = "first_mod all_apply">Sarcomas</span><br />
+                </span>
+                
+                <span style = "position:relative;top:-15px;">
+                    Sarcomas are cancers that <span class = "link" onClick = "window.open('http://www.cancerresearchuk.org/about-cancer/type/bowel-cancer/about/types-of-bowel-cancer', '_blank', 'location=yes');">develop in the bone or muscle</span>. The growth of this cancer causes pressure on the body and organs that can sometimes result in the infected cells being spread around the body.  
+                    <br />
+                    <br />
+                    While they technically have the potential to spread to <span class = "link" onClick = "window.open('http://www.cancerresearchuk.org/about-cancer/type/sarcoma/about/about-sarcomas', '_blank', 'location=yes');">nearly any site in the body</span>, the most common place to spread is to the lungs or bones.             
+                    <br />
+                    <br />
+                
+                </span>
+                
+            </div>
+            
+            <span id = "redirect_button_two" style = "top:481vh;" onClick = "learn_more('colo_second')">Learn More<span>
+
+
+            </div>
+            <div class="swiper-slide" id = "third_main_color">
+                
+                
+                <span id = "title" style = "top:499vh;">Medical Advancements (1/2)</span>
+                <div id = "content_holder" style = "top:509vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Advancements in Understanding</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        One of the most powerful tools that doctors and researchs have at their disposal to fight Colorectal Cancers is through early detection and prevention. 
+                        <br />
+                        <br />
+                        
+
+                        There have been tremendous improvements made in this regard over the past decade and a half, something that has proven to be very useful in taking those first steps towards overcoming the issue as a whole.
+                       
+                       
+                        <br />
+                        <br />
+                        
+                    </span>
+                   
+                        </div>
+             <span id = "redirect_button" class = "first_bad_button" onClick = "learn_more('colo_third')">Learn More<span>
+            
+            </div>
+            
+            <div class="swiper-slide" id = "fourth_main_color">
+                
+                <span id = "title" style = "top:582vh;">Medical Advancements (2/2)</span>
+                <div id = "content_holder" style = "top:592vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Advancements in Drug Usage</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        Recent discoveries have done much to allow researchers to utilize various drug combinations in their efforts to boost the survival rate of Colorectal Cancer patients. 
+                        <br />
+                        <br />
+                        These drugs provide patients everywhere with more options, something that serves to enhance the comfort and health of those suffering from the disease.
+                        <br /><br />
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button_two" class = "second_bad_button" onClick = "learn_more('colo_fourth')">Learn More<span>
+                    
+                
+                
+                
+                </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                
+                
+                <span id = "title" style = "top:664vh;">How to Help (1/2)</span>
+                <div id = "content_holder" style = "top:675vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Fight Colorectal Cancer</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        <span class = "link" onClick = "window.open('http://fightcolorectalcancer.org', '_blank', 'location=yes');">Fight Colorectal Cancer</span> has been on the front lines of the fight against Colorectal Cancers for years now.
+                        <br />
+                        <br />
+                       They have dedicated themselves to promoting the development of new treatments as well as making sure the public is well educated on the causes of Colorectal Cancers, something that has done much to inspire hope in those who suffer from it.    
+                        
+                        <br /><br />
+                        
+                    </span>
+                    
+                </div>
+                
+               
+                    <span onClick = "window.open('https://give.fightcrc.org/checkout/donation?eid=26925', '_blank', 'location=yes');"> <span id = "redirect_button" class = "third_bad_button">Donate<span></span>
+
+                
+            
+            
+            
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+                <span id = "title" style = "top:747vh;">How to Help (2/2)</span>
+                <div id = "content_holder" style = "top:758vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">The NCCRA</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        The <span class = "link" onClick = "window.open('http://www.eifoundation.org/programs/eifs-national-colorectal-cancer-research-alliance', '_blank', 'location=yes');">NCCRA (National Colorectal Cancer Alliance)</span> has made it their mission to eradicate the threat of Colorectal Cancers for everyone. 
+                        <br />
+                        <br />
+                        They attempt to do this by promoting and raising funds for medical screenings, scientific tests, and treatments. They attempt to do this by promoting and raising funding for medical screenings, scientific tests, and treatments. 				
+											<br />
+                        <br />
+                        
+                    </span>
+                    
+                </div>
+                
+                
+                <span onClick = "window.open('http://www.eifoundation.org/content/donate-nccra', '_blank', 'location=yes');"> <span id = "redirect_button_two" style = "top:813vh;">Donate<span></span>
+                    
+                    
+                    
+                    
+
+            </div>
+            <span id = "absolute_footer_donate" onTouchEnd = "leave_diseases();">Tap to return to Diseases</span>
+        </div>
+        
+        
+        <!-- Add Pagination -->
+       
+    </div>   
+			   
+			   
+			   
+			   
+           </span>
+	      	
+	        <br />
+	        <br />
+	
+			</span>
+	        </div>
+			</div>
+            
+                
+            </div>
+         <script src = "swiper.jquery.min.js"></script>
+        <script>
+              var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical'
+    });
+            </script>
+    </body>
+</html>

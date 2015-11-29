@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+        <link href = "swiper.min.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages'frown emoticon'corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                            
+                              ['Females', 24],
+                              ['Males', 76]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_other_page()" id = "the_body" style = "background-color:#2196F3;">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">HER2 Protein Therapies</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		<div id = "other_header">HER2 Protein Therapies</div>
+    
+		
+		<div id = "body_content">
+			<br />
+			<span id = "sub_header">What is it?</span>
+            <hr />
+            <span style = "position:relative;top:-30px;">
+                There exists within <span class = "link" onClick = "window.open('http://ww5.komen.org/BreastCancer/TumorCharacteristics.html', '_blank', 'location=yes');">nearly 20 percent</span> of Breast Cancer patients an abnormal strain of HER2 proteins.
+                        <br />
+                        <br />
+                        
+                       This protein essentially drives up the growth of cancerous cells. While in the past this was something that worsened survival rates, recent research has all but eliminated this additonal risk and in doing so has saved countless lives.
+                <br />
+                <br />
+                As <span class = "link" onClick = "window.open('http://doctors.dana-farber.org/directory/profile.asp?pict_id=0000382', '_blank', 'location=yes');">medical oncologist Dr. Wendy Chen</span> puts it, "HER2-directed therapies have revolutionized the treatment of HER2-positive breast cancer."
+               
+                
+                
+                  
+                
+                
+             </span>
+            <span id = "sub_header">How effective is it?</span>
+              <hr />
+              <span style = "position:relative;top:-30px;">
+                  <span class = "link" onClick = "window.open('http://jco.ascopubs.org/content/early/2014/10/14/JCO.2014.55.5730.full.pdf', '_blank', 'location=yes');">A 2014 study titled</span> Trastuzumab Plus Adjuvant Chemotherapy for Human Epidermal Growth Factor Receptor 2–Positive Breast Cancer unveiled some of the improvements in treatment that have been made in the past few years.
+                  <br />
+                  <br />
+                  They found that by combining <span class = "link" onClick = "window.open('http://www.herceptin.com', '_blank', 'location=yes');">Herceptin</span> with chemotherapy survival rates could be improved significantly. In fact, 10 year-survival improved from 75 percent to 84 percent when the treatment was utilized. As for side effects, the most prominent where cardiac-related.
+                  <br />
+                  <br />
+                These occured in around 3 percent of patients, and most recovered completely from the initial effects.    
+                 <br />
+                  <br />
+                  Additionally, a <span class = "link" onClick = "window.open('http://ww5.komen.org/Breast-Cancer-News/Combination-of-HER2-Targeted-Therapies-May-Provide-Breast-Cancer-Benefit.html', '_blank', 'location=yes');">Phase III clinical trial</span> demonstrated the possibility for a combination of HER2-targeted therapies to effectively combat HER2-positive Breast Cancers.
+              </span>
+              
+            
+            
+              
+            <span id = "sub_header">What does this mean?</span>
+            <hr />
+             <span style = "position:relative;top:-30px;">
+                 While avaliable research on these combinations is limited, their existence is proof enough of the progess that is being made in terms of combatting dangerous subsets of Breast Cancer. 
+                 
+             </span>
+             <br />
+             
+            <div id = "return_button" onTouchEnd = "go_back();">Go Back</div>
+               
+            <br />
+            <br />
+		</div>
+		<!-- Maybe make the color fade from green to a light red -->
+          </body>
+</html>

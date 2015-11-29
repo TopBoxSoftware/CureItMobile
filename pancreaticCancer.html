@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+         <link href = "swiper.min.css" />
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script src="sweetalert-dev.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+       
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                            
+                              ['Exocrine Cancers', 95],
+                              ['Endocrine Cancers', 5]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+        <script type = "text/javascript">
+            jQuery(document).ready(function($){
+                incrementDisease("panc");
+            });
+        </script>
+		
+    </head>
+	
+    <body onLoad = "init_disease_page()" class = "first_main_color" id = "the_body">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Pancreatic Cancers</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+            
+		<span id = "full_wrapper_complete_no_effect">
+	        <span id = "full_wrapper">
+	       <!--     <div class="box header_size_large" id = "head">pancreatic Cancer</div>
+	              <br /><br />
+                <span class = "gray_sub_header">Over 28 people are diagnosed with pancreatic Cancer every day in the UK alone.</span>
+	           -->
+          
+			  <div class="swiper-container">
+                  
+        <div class="swiper-wrapper">
+			<div id = "first_preview_pane"></div>
+			
+            <span class="swiper-slide">
+			<div id = "disease_header" style="font-size:36px">Pancreatic Cancer</div>
+			
+			<div id = "content_holder" style = "text-align:center;">
+			<span id = "fact">Only 6% of people with diagnosed with a form of Pancreatic live beyond 5 years</span><br />
+			
+            <div id = "index_button" style = "top:12vh;" onClick = "swiper.slideTo(4, 1000);" onTouchEnd = "run()">Types of Pancreatic Cancer</div>
+            <div id = "index_button" style = "top:31vh;" onClick = "swiper.slideTo(6, 1000);" onTouchEnd = "run()">Medical Advancements</div>
+            <div id = "index_button" style = "top:50vh;" onClick = "swiper.slideTo(8, 1000);" onTouchEnd = "run()">How to Help</div>
+            
+			</div>
+			
+                
+                
+                
+                
+                
+                
+                
+			
+                
+                
+                
+                
+                
+                
+                
+			</span>
+            <span class="swiper-slide" id = "second_main_color">
+				<span id = "title">Introduction (1/3)</span>
+				<div id = "content_holder" style = "top:95vh;">
+                    <span onClick = "window.open('http://www.medicalnewstoday.com/info/pancreatic-cancer/', '_blank', 'location=yes');"class = "link">Pancreatic Cancer</span> is one of the deadliest diseases currently operating in the world today. While it is relatively rare compared to other forms of cancer, the prognosis can often be quite dire for those that suffer from it. 
+                    <br />
+                    <br />
+                    
+                    This unfortunate fact can even hold true in cases in which the cancer is diagnosed and treated early in its development, although such a situation can benefit the outlook of the disease when compared to its later stages.
+                    <br />
+                    <br />
+                    
+                    There are two major types of Pancreatic Cancer: <span onClick = "window.open('https://www.pancan.org/section-facing-pancreatic-cancer/learn-about-pan-cancer/types-of-pancreatic-cancer/exocrine/', '_blank', 'location=yes');"class = "link">Exocrine Tumors</span> and <span onClick = "window.open('http://cancer.osu.edu/cancer-specialties/cancer-care-and-treatment/endocrine-cancers', '_blank', 'location=yes');" class = "link">Endocrine Tumors</span>.
+                    
+
+				</div>
+				
+			</span>
+            <div class="swiper-slide" id = "third_main_color">
+                <span id = "title" style = "top:168vh">Introduction (2/3)</span>
+                <div id = "content_holder" style = "top:179vh;">
+                    Pancreatic Cancer is comprised of tumors found in or near the pancreatic region of the body. The <span onClick = "window.open('http://www.medicalnewstoday.com/info/pancreatic-cancer/', '_blank', 'location=yes');" class = "link">pancreas</span> is a 6-inch long organ that can be found behind the stomach in the back of the abdomen. 
+                    <br />
+                    <br />
+                    Its function in the body is essential: it secretes hormones and sends them to glands in order to perform routine body functions. Pancreatic Cancer involves the uncontrollable growth of pancreatic cells that impede the normal functioning of the pancreas.  
+                    <br />
+                    <br />
+                    
+                    
+                  
+                    </div>
+                
+                
+                </div>
+            <div class="swiper-slide" id = "fourth_main_color">
+                <span id = "title" style = "top:251vh;">Introduction (3/3)</span>
+                <div id = "content_holder" style = "top:260vh;">
+                    Lets begin by going through the specifics of each type of Pancreatic Cancer as highlighted above. The graph below reveals the prominence of the 2 different types of Pancreatic Cancers relative to each other. The clear leader is <span style="color:#C62828">Exocrine Tumors</span>, with <span style="color:#0D47A1">Endocrine</span> Tumors coving a tiny fraction of total Pancreatic Cancer cases. 
+                    
+                    
+                    <div id="chart_div" style = "position:relative;top:-45px;"></div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+                
+                
+                
+            </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                <span id = "title" style = "top:334vh;">Types of Cancer (1/2)</span>
+                <div id = "content_holder" style = "top:344vh;">
+                    
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Exocrine Cancers</span><br />
+                    </span>
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                    Exocrine Tumors are easily the most common form of Pancreatic Cancers. Because of this, a diagnosis of Pancreatic Cancer is almost always referring to this specific type of tumor. 
+                    <br />
+                    <br />
+                    Formulating a working knowledge of the differences between Exocrine and Endocrine Tumors is important due to the differences in prognosis and methods of treatment that each subset of the disease demands.
+                    <br />
+                    <br />
+                    
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button" style = "top:398vh;" onClick = 'learn_more("pancreatic_first")'>Learn More<span>
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+            
+            <span id = "title" style = "top:416vh;">Types of Cancer (2/2)</span>
+            <div id = "content_holder" style = "top:426vh;">
+                <span class = "center_inline">
+                    <span id = "fact" class = "first_mod all_apply">Endocrine Cancer</span><br />
+                </span>
+                
+                <span style = "position:relative;top:-15px;">
+                    Endocrine Tumors occur significantly less than Exocrine Tumors largely because only about 5% of the cells in the pancreas are <span class = "link" onClick = "window.open('http://en.wikipedia.org/wiki/Metastasis', '_blank', 'location=yes');">Enteroendocrine (Endocrine) Cells</span>. 
+                    <br />
+                    <br />
+                    While Exocrine Tumors are known for spreading to other systems in the body, Endocrine Tumors are typically only able to spread within the pancreas itself, thus limiting the mortality rate of this disease significantly.
+                    
+                    <br />
+                    <br />
+                    
+                </span>
+                
+            </div>
+            
+            <span id = "redirect_button_two" style = "top:481vh;" onClick = "learn_more('pancreatic_second')">Learn More<span>
+
+
+            </div>
+            <div class="swiper-slide" id = "third_main_color">
+                
+                
+                <span id = "title" style = "top:499vh;">Medical Advancements (1/2)</span>
+                <div id = "content_holder" style = "top:509vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Palliative Surgery</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        <span class = "link" onClick = "window.open('http://www.mdanderson.org/patient-and-cancer-information/cancer-information/cancer-topics/cancer-treatment/surgery/index.html', '_blank', 'location=yes');">Palliative Surgery</span> is less of a treament method and more of a way of managing pain so that other treatment methods may be employed.  
+                        <br />
+                        <br />
+                        That said, recent medical advancements have increased the effectiveness of this option and in doing so have supported the comfort and happiness of thousands of patients around the globe.
+                       
+                        <br />
+                        <br />
+                        
+                    </span>
+                   
+                        </div>
+             <span id = "redirect_button" class = "first_bad_button" onClick = "learn_more('pancreatic_third')">Learn More<span>
+            
+            </div>
+            
+            <div class="swiper-slide" id = "fourth_main_color">
+                
+                <span id = "title" style = "top:582vh;">Medical Advancements (2/2)</span>
+                <div id = "content_holder" style = "top:592vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">External Beam Radiation Therapy</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        <span class = "link" onClick = "window.open('http://www.cancer.org/treatment/treatmentsandsideeffects/treatmenttypes/radiation/radiationtherapyprinciples/radiation-therapy-principles-how-is-radiation-given-external-beam-rad', '_blank', 'location=yes');">External Beam Radiation Therapy</span> is a subset of radiation therapy that is employed to reduce the size of or remove certain tumors. 
+                        <br />
+                        <br />
+                        
+                        It is used in cancers of the pancreas due to the targeted nature of the treatment. Recent advancements in medical technologies have done much to reduce the negative side efects of such treatments while also bolstering their effectiveness. 
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button_two" class = "second_bad_button" onClick = "learn_more('pancreatic_fourth')">Learn More<span>
+                    
+                
+                
+                
+                </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                
+                
+                <span id = "title" style = "top:664vh;">How to Help (1/2)</span>
+                <div id = "content_holder" style = "top:675vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">The Lustgarten Foundation</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        <span class = "link" onClick = "window.open('https://www.lustgarten.org', '_blank', 'location=yes');">The Lustgarten Foundation</span> is an organization that has tirelessly dedicated itself to the eradication of Pancreatic Cancers. They pursue this goal on 2 equally important fronts: increasing public awareness of the issue of Pancreatic Cancer and what the average person can do to help, and working to ensure that proper funding is allocated to the research and development of effective new treatments that are specific to the disease.  
+                        
+                        
+                    </span>
+                    
+                </div>
+                
+               
+                    <span onClick = "window.open('https://www.lustgarten.org/donate', '_blank', 'location=yes');"> <span id = "redirect_button" class = "third_bad_button">Donate<span></span>
+
+                
+            
+            
+            
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+                <span id = "title" style = "top:747vh;">How to Help (2/2)</span>
+                <div id = "content_holder" style = "top:758vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">The Pancreatic Cancer Action Network</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        The <span class = "link" onClick = "window.open('https://www.pancan.org/', '_blank', 'location=yes');"> Pancreatic Cancer Action Network</span> is a foundation based in California that has comitted itself to not only increasing public awareness of Pancreatic Cancer, but also helping to connect and assist families who have been intimately affected by the disease. 
+                        
+                    </span>
+                    
+                </div>
+                
+                
+                <span onClick = "window.open('https://www.pancan.org/donate-now/', '_blank', 'location=yes');"> <span id = "redirect_button_two" style = "top:813vh;">Donate<span></span>
+                    
+                    
+                    
+                    
+
+            </div>
+            <span id = "absolute_footer_donate" onTouchEnd = "leave_diseases();">Tap to return to Diseases</span>
+        </div>
+        
+        
+        <!-- Add Pagination -->
+       
+    </div>   
+			   
+			   
+			   
+			   
+           </span>
+	      	
+	        <br />
+	        <br />
+	
+			</span>
+	        </div>
+			</div>
+            
+                
+            </div>
+         <script src = "swiper.jquery.min.js"></script>
+        <script>
+              var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical'
+    });
+            </script>
+    </body>
+</html>

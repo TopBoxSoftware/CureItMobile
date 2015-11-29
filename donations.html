@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "swiper.jquery.min.js"></script>
+        <script src = "cordova.js"></script>
+        <link href = "swiper.min.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                            
+                              ['Females', 24],
+                              ['Males', 76]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_disease_page()" id = "the_body" style = "background-color:#EF5350;">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Bladder Cancers</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu">
+			<div>
+				<span class="logo">logo</span>
+				
+				<ul>
+					<li><a href="#/">My Profile</a></li>
+					<li><a href="#/about">Diseases</a>
+					</li>
+					<li><a href="#/faq">Stories</a></li>
+                    
+                    <li><a href="#/contact">FAQ</a></li>
+                    
+                    <li><a href="#/contact">Resources</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+            
+		<span id = "full_wrapper_complete_no_effect">
+	        <span id = "full_wrapper">
+	       <!--     <div class="box header_size_large" id = "head">Bladder Cancer</div>
+	              <br /><br />
+                <span class = "gray_sub_header">Over 28 people are diagnosed with Bladder Cancer every day in the UK alone.</span>
+	           -->
+          
+			  <div class="swiper-container">
+                  
+        <div class="swiper-wrapper">
+			<div id = "first_preview_pane"></div>
+			
+            <span class="swiper-slide">
+			<div id = "disease_header">Bladder Cancers</div>
+			
+			<div id = "content_holder">
+			<span id = "fact">Over 28 people are diagnosed with Bladder Cancer every day in the UK alone.</span><br />
+			
+            <div id = "index_button" style = "top:12vh;" onClick = "swiper.slideTo(4, 1000);" onTouchEnd = "run()">Types of Bladder Cancer</div>
+            <div id = "index_button" style = "top:31vh;" onClick = "swiper.slideTo(6, 1000);" onTouchEnd = "run()">Medical Advancements</div>
+            <div id = "index_button" style = "top:50vh;" onClick = "swiper.slideTo(8, 1000);" onTouchEnd = "run()">How to Help</div>
+            
+			</div>
+			
+			
+			</span>
+            <span class="swiper-slide" style = "background-color:#59ADEC;">
+				<span id = "title">Introduction (1/3)</span>
+				<div id = "content_holder" style = "top:94vh;">
+                    Bladder Cancer is one of the most common types of urinary cancers. In 2014, <span class = "link" onTouchEnd = "window.open('http://seer.cancer.gov/statfacts/html/urinb.html', '_blank', 'location=yes');">there were approximately 75,000 diagnoses of Bladder Cancer</span>.
+                    <br />
+                    <br />
+                    
+                    There were <span class = "link" onTouchEnd = "window.open('http://seer.cancer.gov/statfacts/html/urinb.html', '_blank', 'location=yes');">16,000 deaths</span>, amounting to <span class = "link" onTouchEnd = "window.open('http://seer.cancer.gov/statfacts/html/urinb.html', '_blank', 'location=yes');">around 3%</span> of all cancer related fatalities in that year. Unfortunately, the number of diagnoses has increased by nearly a quarter over the last decade.
+                    <br />
+                    <br />
+                    
+                    This is largely due to the increase in the quality of medical equipment used to perform biopsies and find cancer in the first place, as well as environmental carcinogens.
+                    
+
+				</div>
+				
+			</span>
+            <div class="swiper-slide" style = "background-color:#FF5E52;">
+                <span id = "title" style = "top:168vh">Introduction (2/3)</span>
+                <div id = "content_holder" style = "top:176vh;">
+                    Bladder Cancer is  <span class = "link" onTouchEnd = "window.open('http://seer.cancer.gov/statfacts/html/urinb.html', '_blank', 'location=yes');">three to four times more common in men than women</span> and is most common in middle and old age. Thankfully, Bladder Cancer typically responds well to treatment, so early diagnoses usually result in remission.
+                    <br />
+                    <br />
+                    That being said, failure to discover this disease in a timely manner can be dangerous, and Stage III and IV Bladder Cancer is often terminal.
+                    <br />
+                    <br />
+                    Just like many other types of cancer, the diagnosis rate has been steadily increasing over the past few years, while fatalities decrease.
+                    
+                  
+                    </div>
+                
+                
+                </div>
+            <div class="swiper-slide" style = "background-color: #3DD0AC;">
+                <span id = "title" style = "top:251vh;">Introduction (3/3)</span>
+                <div id = "content_holder" style = "top:259vh;">
+                    It's important to remember that the earlier any form of cancer is detected, the easier it is to completely get rid of it, and Bladder Cancer is no exception. The following chart illustrates the occurance of Bladder Cancer in each respective gender.
+                    
+                    
+                    <div id="chart_div" style = "position:relative;top:-45px;"></div>
+                    
+                    
+                    <span id = "center_relative" style = "  top:-80px; font-size:25px;">
+                        <span id = "chart_text" style = "color:#0D47A1;margin-right:35px;">Males</span>
+                        <span id = "chart_text" style = "color:#F7464A">Females</span>
+                    </span>
+                    
+                    
+                </div>
+                
+                
+                
+            </div>
+            <div class="swiper-slide">
+                
+                <span id = "title" style = "top:334vh;">Types of Cancer (1/2)</span>
+                <div id = "content_holder" style = "top:342vh;">
+                    <span id = "fact" style = "font-size:25px;top:-15px;">Transitional Cell</span><br />
+                    
+                    <span style = "position:relative;top:-15px;">
+                    This is by far the majority of all diagnosed Bladder Cancers, <span class = "link" onTouchEnd = "window.open('http://www.cancerresearchuk.org/about-cancer/type/bladder-cancer/about/types-of-bladder-cancer', '_blank', 'location=yes');">amounting to nearly 90% of all cases</span>. Cells in the lining of the bladder often come into contact with toxic chemicals in urine waste.
+                    <br />
+                    <br />
+                    Since some of these chemicals are carcinogens, these cells can get damaged and form into tumors. Over time, the cancer can spread into the tissue surrounding the bladder and metastasize from there.
+                    <br />
+                    <br />
+                    
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button" style = "top:398vh;">Learn More<span>
+            </div>
+            <div class="swiper-slide" style = "background-color:#59ADEC;">
+            
+            <span id = "title" style = "top:416vh;">Types of Cancer (2/2)</span>
+            <div id = "content_holder" style = "top:425vh;">
+                <span id = "fact" style = "font-size:25px;top:-15px;">Squamous Cell</span><br />
+                
+                <span style = "position:relative;top:-15px;">
+                    <span class = "link" onTouchEnd = "window.open('http://radiopaedia.org/articles/squamous-cell-carcinoma-of-the-bladder', '_blank', 'location=yes');">Squamous cells</span> are specialized cells that line the vital internal organs of the body. Similarly to transitional cells, squamous cells regularly come into contact with the body's waste and are exposed to a whole host of toxins as a result.
+                    <br />
+                    <br />
+                    When infected, they die quickly, so they are less prone to growing out of control and becoming cancerous than transitional cells. Squamous cells are identified by their spongy nature and flat, rectangular shape.
+                    
+                    <br />
+                    <br />
+                    
+                </span>
+                
+            </div>
+            
+            <span id = "redirect_button_two" style = "top:481vh;" >Learn More<span>
+
+
+            </div>
+            <div class="swiper-slide" style = "background-color:#FF5E52;">
+                
+                
+                <span id = "title" style = "top:499vh;">Medical Advancements (1/2)</span>
+                <div id = "content_holder" style = "top:508vh;">
+                    <span id = "fact" style = "font-size:25px;top:-15px;">Photodynamic Therapy</span><br />
+                    
+                    <span style = "position:relative;top:-15px;">
+                        Recent years have yielded advances in treatment of Bladder Cancer. One of the most promising is the application of photodynamic therapy. This practice involves injecting small, light-sensitive chemicals into the bloodstream of a patient.
+                        <br />
+                        <br />
+                        These chemicals accrue along the lining of the bladder and “stick” to cancerous cells. This technique is effective at killing cancer cells along the lining of the bladder wall, but often times will miss deeper tumors entirely.
+                       
+                       
+                        <br />
+                        <br />
+                        
+                    </span>
+                   
+                        </div>
+             <span id = "redirect_button" style = "top:564vh;">Learn More<span>
+            
+            </div>
+            
+            <div class="swiper-slide" style = "background-color:#3DD0AC;">
+                
+                <span id = "title" style = "top:582vh;">Medical Advancements (2/2)</span>
+                <div id = "content_holder" style = "top:591vh;">
+                    <span id = "fact" style = "font-size:22px;top:-15px;">Intravesical Immunotherapy</span><br />
+                    
+                    <span style = "position:relative;top:-15px;">
+                        Recent years have yielded advances in treatment of Bladder Cancer. One of the most promising is the application of photodynamic therapy. This practice involves injecting small, light-sensitive chemicals into the bloodstream of a patient.
+                        <br />
+                        <br />
+                        These chemicals accrue along the lining of the bladder and “stick” to cancerous cells. This technique is effective at killing cancer cells along the lining of the bladder wall, but often times will miss deeper tumors entirely.
+                        
+                        
+                        <br />
+                        <br />
+                        
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button_two" style = "top:647vh;">Learn More<span>
+                    
+                
+                
+                
+                </div>
+            <div class="swiper-slide">
+                
+                
+                
+                <span id = "title" style = "top:664vh;">How to Help (1/2)</span>
+                <div id = "content_holder" style = "top:674vh;">
+                    <span id = "fact" style = "font-size:19px;top:-15px;">Bladder Cancer Advocacy Network</span><br />
+                    
+                    <span style = "position:relative;top:-15px;">
+                        <span class = "link" onTouchEnd = "window.open('http://www.bcan.org/about-us/what-we-do/', '_blank', 'location=yes');">The Bladder Cancer Advocacy Network</span> uses a variety of angles to combat Bladder Cancer. It is led by a panel of urologists, oncologists, radiation oncologists and pathologists known as the Scientific Advisory Board that convines to lead research efforts as knowledge of Bladder Cancer grows.
+                        <br />
+                        <br />
+                        These scientists and doctors are some of the leading experts in their respective fields, and you can find a complete list of the members of the SAB  <span class = "link" onTouchEnd = "window.open('http://www.bcan.org/about-us/bcan-scientific-advisory-board/', '_blank', 'location=yes');">here</span>.
+                        <br />
+                        <br />
+                        
+                    </span>
+                    
+                </div>
+                
+               
+                    <span class = "link" onTouchEnd = "window.open('https://49906.thankyou4caring.org/donatenow', '_blank', 'location=yes');"> <span id = "redirect_button" style = "top:730vh;">Donate<span></span>
+
+                
+            
+            
+            
+            </div>
+            <div class="swiper-slide" style = "background-color:#59ADEC;">
+                <span id = "title" style = "top:747vh;">How to Help (2/2)</span>
+                <div id = "content_holder" style = "top:757vh;">
+                    <span id = "fact" style = "font-size:23px;top:-15px;">Bladder Cancer Canada</span><br />
+                    
+                    <span style = "position:relative;top:-15px;">
+                        <span class = "link" onTouchEnd = "window.open('https://bladdercancercanada.org/en/about/', '_blank', 'location=yes');">Bladder Cancer Canada</span> is a non-profit advocacy organization committed to fighting Bladder Cancer. Although based in Canada, it operates worldwide. Founded by Bladder Cancer survivors, BCC is a transparent organization that focuses on patient interaction and support.
+                        <br />
+                        <br />
+                        Its  <span class = "link" onTouchEnd = "window.open('https://bladdercancercanada.org/en/about/people/cat/board-of-directors', '_blank', 'location=yes');">Board of Directors</span> works closely with a series of scientists comprising the <span class = "link" onTouchEnd = "window.open('https://bladdercancercanada.org/en/about/people/cat/medical-advisory-board', '_blank', 'location=yes');">Medical Advisory Board</span> and <span class = "link" onTouchEnd = "window.open('https://bladdercancercanada.org/en/about/people/cat/medical-research-board', '_blank', 'location=yes');">Medical Research Board</span>.
+                       
+                        <br />
+                        <br />
+                        
+                    </span>
+                    
+                </div>
+                
+                
+                <span class = "link" onTouchEnd = "window.open('https://49906.thankyou4caring.org/donatenow', '_blank', 'location=yes');"> <span id = "redirect_button_two" style = "top:813vh;">Donate<span></span>
+                    
+                    
+                    
+                    
+
+            </div>
+            <span id = "absolute_footer_donate" onTouchEnd = "leave_diseases();">Tap to return to Diseases</span>
+        </div>
+        
+        
+        <!-- Add Pagination -->
+       
+    </div>   
+			   
+			   
+			   
+			   
+           </span>
+	      	
+	        <br />
+	        <br />
+	
+			</span>
+	        </div>
+			</div>
+        
+        <script>
+              var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical'
+    });
+            </script>
+    </body>
+</html>

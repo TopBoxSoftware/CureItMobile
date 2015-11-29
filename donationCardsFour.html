@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        <link href = "swiper.min.css" />
+        
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+            
+         html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #0D47A1;
+        color:white;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        color:white;
+    }
+            
+    .swiper-slide-modification
+    {
+        position: absolute;
+        background-color:#0D47A1;
+        color:#F2F2F2;
+        top:0px;
+        height:92vh;
+        width:500px;
+        left:0px;
+    }
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+		</script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_diseases('donation_card_four')" class = "animated fadeIn" id = "the_body" style = "overflow:hidden;">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Donate: Free Methods</span>
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "nav_button" class = "third_nav" onClick = "window.location = 'donationCardsTwo.html'">Section III (Sk - Th)</div>
+       
+        <div id = "full_wrapper_complete">
+		<span id = "full_wrapper_complete_no_effect">
+	   
+           <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide-modification donation_card" style = "position:absolute;left:0vw;height:90vh;width:100vw;">
+                <span id = "slider_header">Switch to List View</span>
+                
+                <span id = "slider_description" style = "top:15vh;">
+                Faster access to all supported charities
+                </span>
+                
+                <span id = "slider_description">
+               The list view provides easy access access to the full range of charities that we support. Although it is a faster way to donate, it is not possible to save charities to your profile from the list view.
+                </span>
+                
+                <span id = "slider_button" onClick = "window.location = 'donate.html'">Open List View</span>
+                
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:100vw;height:90vh;width:100vw;">
+            <img src = "img/heartOff.png" id = "desktop" class = "slider_image" onTouchEnd = "save_charity('desktop')"/>
+            <span id = "slider_header">Desktop Website</span>
+               
+                
+                <span id = "slider_description">
+                 
+                    Our desktop website includes more comprehensive information regarding the options that you can take to combat cancer without spending a single cent. Tap the button below to be directed to the page that covers such topics. 
+                    
+       
+                </span>
+                
+                <span id = "slider_button">Navigate to Site</span>
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:200vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "twitter" class = "slider_image" onTouchEnd = "save_charity('twitter')"/>
+                 <span id = "slider_header">Twitter</span>
+               
+                
+                <span id = "slider_description">
+                 Twitter exists as a fantastic tool for spreading the word regarding cancer research and news without ever having to open your wallet at all. Simply tap the button below to start spreading the word today. 
+                    
+                    
+                </span>
+                
+                <span id = "slider_button">Tweet it Out</span>
+            </div>
+            
+            
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 5</div>
+            
+            
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+        </span>
+        </div>
+        
+       
+        <script src = "swiper.jquery.min.js"></script>
+         <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 0,
+    });
+    </script>
+        
+    </body>
+</html>

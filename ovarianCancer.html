@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+         <link href = "swiper.min.css" />
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script src="sweetalert-dev.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+       
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                              ['Survived 5 Years or More', 55],
+                              ['Didn\'t Survive 5 Years', 45]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+        <script type = "text/javascript">
+            jQuery(document).ready(function($){
+                incrementDisease("ovary");
+            });
+        </script>
+		
+    </head>
+	
+    <body onLoad = "init_disease_page()" class = "first_main_color" id = "the_body">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Ovarian Cancers</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+            
+		<span id = "full_wrapper_complete_no_effect">
+	        <span id = "full_wrapper">
+	       <!--     <div class="box header_size_large" id = "head">ovarian Cancer</div>
+	              <br /><br />
+                <span class = "gray_sub_header">Over 28 people are diagnosed with ovarian Cancer every day in the UK alone.</span>
+	           -->
+          
+			  <div class="swiper-container">
+                  
+        <div class="swiper-wrapper">
+			<div id = "first_preview_pane"></div>
+			
+            <span class="swiper-slide">
+			<div id = "disease_header">Ovarian Cancers</div>
+			
+			<div id = "content_holder">
+			<span id = "fact">Ovarian Cancer is the 4th most common cause of cancer death for women.</span><br />
+			
+            <div id = "index_button" style = "top:12vh;" onClick = "swiper.slideTo(4, 1000);" onTouchEnd = "run()">Types of Ovarian Cancer</div>
+            <div id = "index_button" style = "top:31vh;" onClick = "swiper.slideTo(6, 1000);" onTouchEnd = "run()">Medical Advancements</div>
+            <div id = "index_button" style = "top:50vh;" onClick = "swiper.slideTo(8, 1000);" onTouchEnd = "run()">How to Help</div>
+            
+			</div>
+			
+                
+                
+                
+                
+                
+                
+                
+			
+                
+                
+                
+                
+                
+                
+                
+			</span>
+            <span class="swiper-slide" id = "second_main_color">
+				<span id = "title">Introduction (1/3)</span>
+				<div id = "content_holder" style = "top:94vh;">
+                    Ovarian Cancer is a form of cancer that begins in the ovaries. The ovaries, found exclusively in females, are responsible for <span class = "link" onClick = "window.open('http://www.endocrineweb.com/endocrinology/overview-ovaries', '_blank', 'location=yes');">maintaining the health</span> of the reproductve system and ensuring fertility.
+                    <br />
+                    <br />
+                    There are several types of Ovarian Cancers that we will cover in detail. 
+                  <br />
+                  <br />
+                  These are Common Epithelial Tumors, Germ Cell Tumors, and Stromal Tumors.
+                </div>
+				
+			</span>
+            <div class="swiper-slide" id = "third_main_color">
+                <span id = "title" style = "top:168vh">Introduction (2/3)</span>
+                <div id = "content_holder" style = "top:176vh;">
+                    Perhaps the defining factor that makes Ovarian Cancer so dangerous is the fact that early detection of the disease is often very difficult.  
+                    <br />
+                    <br />
+                    In fact, <span class = "link" onClick = "window.open('https://www.ovationsforthecure.org/aware/aware_facts.php', '_blank', 'location=yes');">only about 19 percent</span> of Ovarian cancer cases are detected before the cancer has spread beyond the point of origin, something which makes these cases substantially more difficult to treat.
+                   <br />
+                   <br />
+                   This is caused in part because of the small size of the ovaries - each ovary is only about the size of a grape. 
+                   
+                    </div>
+                
+                
+                </div>
+            <div class="swiper-slide" id = "fourth_main_color">
+                <span id = "title" style = "top:251vh;">Introduction (3/3)</span>
+                <div id = "content_holder" style = "top:259vh;">
+                    Ovarian Cancer is extremely agressive, taking the lives of over half the people diagnosed. Below is a chart that details the percentage of people that survived past five years.
+                    <div id="chart_div" style = "position:relative;top:-45px;"></div>
+                     <span id = "center_relative" class = "style">
+                        <span id = "chart_text" style = "color:#0D47A1;margin-right:35px;">> 5 Years</span>
+                        <span id = "chart_text" style = "color:#C62828">< 5 Years</span>
+                    </span>
+                    
+                    
+                    
+                    
+                </div>
+                
+                
+                
+            </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                <span id = "title" style = "top:334vh;">Types of Cancer (1/2)</span>
+                <div id = "content_holder" style = "top:344vh;">
+                    
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">CETs</span><br />
+                    </span>
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                    Common Epithelial Tumors (sometimes called CETs) are the most frequently observed form of Ovarian Cancers, making up <span class = "link" onClick = "window.open('http://www.healthcommunities.com/ovarian-cancer/types.shtml', '_blank', 'location=yes');">around 90 percent</span> of all diagnosed cases. 
+                    <br />
+                    <br />
+                    There exists several other ways to classify diseases of this nature, the <span class = "link" onClick = "window.open('http://atlasgeneticsoncology.org/Tumors/OvaryEpithTumID5230.html', '_blank', 'location=yes');">most common of which</span> are through the distinction of Serous and Endometrioid tumors.
+                    <br />
+                    <br />
+                    
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button" style = "top:398vh;" onClick = 'learn_more("ovarian_first")'>Learn More<span>
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+            
+            <span id = "title" style = "top:416vh;">Types of Cancer (2/2)</span>
+            <div id = "content_holder" style = "top:426vh;">
+                <span class = "center_inline">
+                    <span id = "fact" class = "first_mod all_apply">Germ Cell Tumors</span><br />
+                </span>
+                
+                <span style = "position:relative;top:-15px;">
+                    Germ Cell Tumors are relatively rare within the context of Ovarian Cancer, accounting for <span class = "link" onClick = "window.open('http://www.cancer.org/cancer/ovariancancer/detailedguide/ovarian-cancer-treating-germ-cell-tumors', '_blank', 'location=yes');">roughly 2 percent</span> of all newly diagnosed cases. 
+                    <br />
+                    <br />
+                    They <span class = "link" onClick = "window.open('http://www.cancer.gov/cancertopics/pdq/treatment/ovarian-germ-cell/Patient/page1', '_blank', 'location=yes');">almost always occur</span> in younger women, and can affect those who are still teenagers. 
+                    
+                    <br />
+                    <br />
+                    
+                    Germ cell tumors that originate outside the gonads may be birth defects resulting from errors during development of the embryo.
+                </span>
+                
+            </div>
+            
+            <span id = "redirect_button_two" style = "top:481vh;" onClick = "learn_more('ovarian_second')">Learn More<span>
+
+
+            </div>
+            <div class="swiper-slide" id = "third_main_color">
+                
+                
+                <span id = "title" style = "top:499vh;">Medical Advancements (1/2)</span>
+                <div id = "content_holder" style = "top:509vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Advancements in Understanding</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        Because Ovarian Cancer is so difficult to detect, grasping an increased understanding of what causes the disease the first place is all but a necessity. 
+                        <br />
+                        <br />
+                        
+                        This allows scientists and doctors alike to develop a new standard under which to operate when approaching Ovarian Cancer treatment, and leads to further developments that will only benefit others in Ovarian Cancer research.
+                       
+                       
+                        <br />
+                        <br />
+                        
+                    </span>
+                   
+                        </div>
+             <span id = "redirect_button" class = "first_bad_button" onClick = "learn_more('ovarian_third')">Learn More<span>
+            
+            </div>
+            
+            <div class="swiper-slide" id = "fourth_main_color">
+                
+                <span id = "title" style = "top:582vh;">Medical Advancements (2/2)</span>
+                <div id = "content_holder" style = "top:592vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Advancements in Drug Development</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        Recent research has done much to provide new options to doctors and patients alike through the development of life-saving drugs.
+                        <br />
+                        <br />
+                        Because Ovarian Cancer is so difficult to detect at an early stage, many scientists have directed their efforts instead to dealing with Ovarian Cancer in its more advanced stages. 
+                        <br />
+                        <br />
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button_two" class = "second_bad_button" onClick = "learn_more('ovarian_fourth')">Learn More<span>
+                    
+                
+                
+                
+                </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                
+                
+                <span id = "title" style = "top:664vh;">How to Help (1/2)</span>
+                <div id = "content_holder" style = "top:675vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">The Ovarian Cancer Research Fund</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        The <span class = "link" onClick = "window.open('http://www.ocrf.org', '_blank', 'location=yes');">Ovarian Cancer Research Fund</span> has made it its mission to fight Ovarian Cancer on both preventative and reactionary fronts.
+                        <br />
+                        <br />
+                        They have completely committed themselves over the years to driving innovative research programs that enable scientists to be more proactive in their battle against Ovarian Cancers. 
+                        
+                        <br /><br />
+                        
+                    </span>
+                    
+                </div>
+                
+               
+                    <span onClick = "window.open('https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=475938&en=4nLxHFMfG3LGKPOiE2LDKLOsFhLKKSMuFfIKKYOALrE', '_blank', 'location=yes');"> <span id = "redirect_button" class = "third_bad_button">Donate<span></span>
+
+                
+            
+            
+            
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+                <span id = "title" style = "top:747vh;">How to Help (2/2)</span>
+                <div id = "content_holder" style = "top:758vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">The National Ovarian Cancer Coalition</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        Since its founding in 1995, the <span class = "link" onClick = "window.open('http://www.ovarian.org', '_blank', 'location=yes');">National Ovarian Cancer Coalition</span> has tirelessly pursued a means to bring an end to suffering at the hands of Ovarian Cancer. 
+                        <br />
+                        <br />
+                        They feature a best in class <span class = "link" onClick = "window.open('http://www.ovarian.org/leadership_team.php', '_blank', 'location=yes');">leadership team</span> that has been instrumental in guiding the foundation to be the beacon of innovation that it is today. 				
+											<br />
+											<br />
+											
+                        
+                    </span>
+                    
+                </div>
+                
+                
+                <span onClick = "window.open('https://secure.2dialog.com/ovarian/main.php/micro_sites/showpage/id/99', '_blank', 'location=yes');"> <span id = "redirect_button_two" style = "top:813vh;">Donate<span></span>
+                    
+                    
+                    
+                    
+
+            </div>
+            <span id = "absolute_footer_donate" onTouchEnd = "leave_diseases();">Tap to return to Diseases</span>
+        </div>
+        
+        
+        <!-- Add Pagination -->
+       
+    </div>   
+			   
+			   
+			   
+			   
+           </span>
+	      	
+	        <br />
+	        <br />
+	
+			</span>
+	        </div>
+			</div>
+            
+                
+            </div>
+         <script src = "swiper.jquery.min.js"></script>
+        <script>
+              var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical'
+    });
+            </script>
+    </body>
+</html>

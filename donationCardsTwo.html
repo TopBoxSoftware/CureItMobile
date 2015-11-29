@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        <link href = "swiper.min.css" />
+        
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+            
+         html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #0D47A1;
+        color:white;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        color:white;
+    }
+            
+    .swiper-slide-modification
+    {
+        position: absolute;
+        background-color:#0D47A1;
+        color:#F2F2F2;
+        top:0px;
+        height:92vh;
+        width:500px;
+        left:0px;
+    }
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+		</script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_diseases('donation_card_two')" class = "animated fadeIn" id = "the_body" style = "overflow:hidden;">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Donate: Section II (Ey - Pa)</span>
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "nav_button_half" class = "first_nav" onClick = "window.location = 'donationCards.html'">Section I (Bl - En)</div>
+        <div id = "nav_button_half" class = "second_nav" onClick = "window.location = 'donationCardsThree.html'" style = "left:50vw;">Section III (Sk - Th)</div>
+        <div id = "full_wrapper_complete">
+		<span id = "full_wrapper_complete_no_effect">
+	   
+           <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide-modification donation_card" style = "position:absolute;left:0vw;height:90vh;width:100vw;">
+                <span id = "slider_header">Switch to List View</span>
+                
+                <span id = "slider_description" style = "top:15vh;">
+                Faster access to all supported charities
+                </span>
+                
+                <span id = "slider_description">
+               The list view provides easy access access to the full range of charities that we support. Although it is a faster way to donate, it is not possible to save charities to your profile from the list view.
+                </span>
+                
+                <span id = "slider_button" onClick = "window.location = 'donate.html'">Open List View</span>
+                
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:100vw;height:90vh;width:100vw;">
+            <img src = "img/heartOff.png" id = "ETRF" class = "slider_image" onTouchEnd = "save_charity('ETRF')"/>
+            <span id = "slider_header">Eye Tumor Research Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Eye Cancers
+                </span>
+                
+                <span id = "slider_description">
+                    
+              The ultimate goal of the foundation is to make current treatment programs for patients more comfortable and effective through the means of further developing current methods of diagnosis and treatment. 
+
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.etrf.org/donate.html', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:200vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "ECF" class = "slider_image" onTouchEnd = "save_charity('ECF')"/>
+                 <span id = "slider_header">The Eye Cancer Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Eye Cancers
+                </span>
+                
+                <span id = "slider_description">
+                   Their mission is two-fold: to directly assist the research of new diagnostic treatments for Eye Cancer and to provide much needed patient support services. 
+        
+                </span>
+                
+                <span onTouchEnd = "window.open('https://www.eyecancer.com/donate', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:300vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "FFLR" class = "slider_image" onTouchEnd = "save_charity('FFLR')"/>
+                 <span id = "slider_header">The Foundation for Liver Research</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Liver Cancers
+                </span>
+                
+                <span id = "slider_description">
+                   This foundation has committed themselves completely to funding ground-breaking research programs as well as providing laboratory space for the scientists who make such research possible. 
+
+        
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.liver-research.org.uk/liver-research-donations/donation.html', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:400vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "LCRF" class = "slider_image" onTouchEnd = "save_charity('LCRF')"/>
+                 <span id = "slider_header">The Liver Cancer Research Fund</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Liver Cancers
+                </span>
+                
+                <span id = "slider_description">
+                  They have spent the past few years maintaining the fight against Liver Cancer. They work with a best in class team of experts to push the currently established limits of medical knowledge through innovative clinical research. 
+
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.upmc.com/Services/liver-cancer/research/Pages/donate.aspx', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:500vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "HLF" class = "slider_image" onTouchEnd = "save_charity('HLF')"/>
+                 <span id = "slider_header">A Breath of Hope Lung Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Lung Cancers
+                </span>
+                
+                <span id = "slider_description">
+                   They are an organization of like-minded individuals that has been selflessly dedicated to the betterment of Lung Cancer education and medical practices since its inception in 2008.
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://www3.thedatabank.com/dpg/508/spdf.asp?formid=donates', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:600vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "LCFA" class = "slider_image" onTouchEnd = "save_charity('LCFA')"/>
+                 <span id = "slider_header">Lung Cancer Foundation of America</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Lung Cancers
+                </span>
+                
+                <span id = "slider_description">
+                  They are an organization based in the United States that has set their sights on one tremendous goal: establishing groundbreaking results in the field of Lung Cancer treatment.
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://app.etapestry.com/hosted/LungCancerFoundationofAmer/OnlineDonation.html', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:700vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "LRF" class = "slider_image" onTouchEnd = "save_charity('LRF')"/>
+                 <span id = "slider_header">Lymphoma Research Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Lymphatic Cancers
+                </span>
+                
+                <span id = "slider_description">
+                 The Lymphoma Research Foundation actively supports the fight against Lymphatic Cancer on fronts both scientific and informational, and in doing so are able to actively engage the public in combating the disease. 
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://community.lymphoma.org/', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:800vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "LFA" class = "slider_image" onTouchEnd = "save_charity('LFA')"/>
+                 <span id = "slider_header">Lymphoma Foundation of America</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Lymphatic Cancers
+                </span>
+                
+                <span id = "slider_description">
+                 They are a foundation started in 1986, created by a group of people with Lymphoma, dedicated to the betterment of the quality of life and treatment of Lymphoma patients just like them all across the nation. 
+ 
+                </span>
+                
+                <span onTouchEnd = "window.open('https://www.givedirect.org/give/givefrm.asp?CID=10146', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:900vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "OCF" class = "slider_image" onTouchEnd = "save_charity('OCF')"/>
+                 <span id = "slider_header">The Oral Cancer Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Oral Cancers
+                </span>
+                
+                <span id = "slider_description">
+                  The Oral Cancer Foundation has long since been a valuable participant in the battle against Oral Cancers. They have made it their mission to save lives through the promotion of innovative new research and an increased awareness as to the causes of Oral Cancers. 
+                </span>
+                
+                <span onTouchEnd = "window.open('https://donate.oralcancer.org/index.cfm?fuseaction=donate.general', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1000vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "MCF" class = "slider_image" onTouchEnd = "save_charity('MCF')"/>
+                 <span id = "slider_header">The Mouth Cancer Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Oral Cancers
+                </span>
+                
+                <span id = "slider_description">
+                They provide valuable information for patients and professionals alike, helping both parties deal with their situation in a healthy, efficient way free from ignorance. 
+
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.mouthcancerfoundation.org/get-involved/donate-mouth-cancer-foundation', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1100vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "OCRF" class = "slider_image" onTouchEnd = "save_charity('OCRF')"/>
+                 <span id = "slider_header">The Ovarian Cancer Research Fund</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Ovarian Cancers
+                </span>
+                
+                <span id = "slider_description">
+               The Ovarian Cancer Research Fund has made it its mission to fight Ovarian Cancer on both preventative and reactionary fronts. They have completely committed themselves over the years to driving innovative research programs that enable scientists to be more proactive in their battle against Ovarian Cancers. 
+
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=475938&en=4nLxHFMfG3LGKPOiE2LDKLOsFhLKKSMuFfIKKYOALrE', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1200vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "NOCC" class = "slider_image" onTouchEnd = "save_charity('NOCC')"/>
+                 <span id = "slider_header">National Ovarian Cancer Coalition</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Ovarian Cancers
+                </span>
+                
+                <span id = "slider_description">
+               Since its founding in 1995, the National Ovarian Cancer Coalition has tirelessly pursued a means to bring an end to suffering at the hands of Ovarian Cancer. They feature a best in class leadership team that has been instrumental in guiding the foundation to be the beacon of innovation that it is today.
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://secure.2dialog.com/ovarian/main.php/micro_sites/showpage/id/99', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1300vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "LF" class = "slider_image" onTouchEnd = "save_charity('LF')"/>
+                 <span id = "slider_header">The Lustgarten Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Pancreatic Cancers
+                </span>
+                
+                <span id = "slider_description">
+               They fight disease on 2 equally important fronts: increasing public awareness of the issue of Pancreatic Cancer and what the average person can do to help, and working to ensure that proper funding is allocated to the research and development of effective new treatments that are specific to the disease. 
+
+
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://donate.lls.org/lls/donate', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1400vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "PCAN" class = "slider_image" onTouchEnd = "save_charity('PCAN')"/>
+                 <span id = "slider_header">Pancreatic Cancer Action Network</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Pancreatic Cancers
+                </span>
+                
+                <span id = "slider_description">
+              The Pancreatic Cancer Action Network is a foundation based in California that has comitted itself to not only increasing public awareness of Pancreatic Cancer, but also helping to connect and assist families who have been intimately affected by the disease. 
+
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://donate.lls.org/lls/donate', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+        </span>
+        </div>
+        
+       
+        <script src = "swiper.jquery.min.js"></script>
+         <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 0,
+    });
+    </script>
+        
+    </body>
+</html>

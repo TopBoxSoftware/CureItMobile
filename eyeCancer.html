@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+         <link href = "swiper.min.css" />
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script src="sweetalert-dev.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+       
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                            
+                              ['Retinoblastomas', 3],
+                              ['Melanomas', 90],
+                              ['Lymphomas', 7]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1', '#FDB45C']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+        <script type = "text/javascript">
+            jQuery(document).ready(function($){
+                incrementDisease("eye");
+            });
+        </script>
+		
+    </head>
+	
+    <body onLoad = "init_disease_page()" class = "first_main_color" id = "the_body" style = "background-color:#EF5350;">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Eye Cancers</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+            
+		<span id = "full_wrapper_complete_no_effect">
+	        <span id = "full_wrapper">
+	       <!--     <div class="box header_size_large" id = "head">Bladder Cancer</div>
+	              <br /><br />
+                <span class = "gray_sub_header">Over 28 people are diagnosed with Bladder Cancer every day in the UK alone.</span>
+	           -->
+          
+			  <div class="swiper-container">
+                  
+        <div class="swiper-wrapper">
+			<div id = "first_preview_pane"></div>
+			
+            <span class="swiper-slide" id = "first_main_color">
+			<div id = "disease_header">Eye Cancers</div>
+			
+			<div id = "content_holder" style = "text-align:center;">
+                
+                
+			<span id = "fact">Over 5 million people currently have some form of Eye Cancer</span><br />
+			
+            <div id = "index_button" style = "top:12vh;" onClick = "swiper.slideTo(4, 1000);" onTouchEnd = "run()">Types of Eye Cancer</div>
+            <div id = "index_button" style = "top:31vh;" onClick = "swiper.slideTo(6, 1000);" onTouchEnd = "run()">Medical Advancements</div>
+            <div id = "index_button" style = "top:50vh;" onClick = "swiper.slideTo(8, 1000);" onTouchEnd = "run()">How to Help</div>
+            
+			</div>
+            
+                
+                
+			</span>
+            <span class="swiper-slide" id = "second_main_color">
+				<span id = "title">Introduction (1/3)</span>
+				<div id = "content_holder" style = "top:95vh;">
+                    Eye cancers are tumorous growths found in the ocular region of the head.
+                    <br />
+                    <br />
+                    Eye Cancers have been known to spread to other parts of the body relatively quickly when compared to other diseases, something which makes them difficult to treat effectively.
+                    
+                    <br />
+                    <br />
+                    
+                    There are three primary types of Eye Cancer: Intraocular Melanomas, Intraocular Lymphomas, and Retinoblastomas. The specifics of each type will be discussed thouroughly down below.
+                    
+
+				</div>
+				
+			</span>
+            <div class="swiper-slide" id = "third_main_color">
+                <span id = "title" style = "top:168vh">Introduction (2/3)</span>
+                <div id = "content_holder" style = "top:179vh;">
+                    While Eye Cancers can impact anyone, they are especially prominent in males over the age of 55.
+                    <br />
+                    <br />
+                    Eye Cancers actually account for <span class = "link" onClick = "window.open('http://www.ocularmelanoma.org/disease.html', '_blank', 'location=yes');">anywhere from 5 to 7.5 million unique cases</span> of cancer throughout the US and Europe</a>.
+                    <br />
+                    <br />
+                    To put this in perspective, over 2,500 adults each year in the US alone will be diagnosed with this terrible disease.
+                    
+                  
+                    </div>
+                
+                
+                </div>
+            <div class="swiper-slide" id = "fourth_main_color">
+                <span id = "title" style = "top:251vh;">Introduction (3/3)</span>
+                <div id = "content_holder" style = "top:260vh;">
+                    The graph below reveals the percentage of occurance in relation to each respective subset of Eye Cancer. As you can see, <span style = "color:#0D47A1">Melanomas</span> are far more common than <span style = "color:#FDB45C">Lymphomas</span>, and <span style = "color:#C62828">Retinoblastomas</span> are an even rarer form, only found in children.
+                    <br />
+                    
+                    <div id="chart_div" style = "position:relative;top:-45px;"></div>
+                    
+                    
+                </div>
+                
+                
+                
+            </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                <span id = "title" style = "top:334vh;">Types of Cancer (1/2)</span>
+                <div id = "content_holder" style = "top:344vh;">
+                    
+                    
+                   
+                    
+                    
+                    
+                    
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Retinoblastomas</span><br />
+                    </span>
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        Retinoblastomas are a form of Eye Cancer that is found exclusively in <span class = "link" onClick = "window.open('http://www.cancerresearchuk.org/about-cancer/type/eye-cancer/about/types-of-eye-cancer', '_blank', 'location=yes');)">children under the age of 5</span>. Although Retinoblastomas are by no means common, their influence demands attention. 
+                        <br />
+                        <br />
+                        They are usually contracted as a result of a mutation in a gene referred to in the scientific community as the RB gene. 
+
+                    
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button" style = "top:398vh;" onClick = 'learn_more("eye_first")'>Learn More<span>
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+            
+                
+                
+            <span id = "title" style = "top:416vh;">Types of Cancer (2/2)</span>
+            <div id = "content_holder" style = "top:426vh;">
+                <span class = "center_inline">
+                    <span id = "fact" class = "first_mod all_apply">Intraocular Melanomas</span><br />
+                </span>
+                
+                <span style = "position:relative;top:-15px;">
+                    Before we can properly dicuss Intraocular Melanomas and the impact that they have on people, it's important to first understand exactly what Melanoma is. 
+                    <br />
+                    <br />
+                    In short, <span class = "link" onClick = "window.open('http://www.news-medical.net/health/What-is-Melanin.aspx', '_blank', 'location=yes');">Melanoma is caused</span> when malignant cells rapidly grow from melanin, a pigment in the skin which is responsible for tanning. This explains why there are health restrictions on tanning beds, and why you use sunscream when you go to the beach.
+
+
+                    
+                </span>
+                
+            </div>
+            
+            <span id = "redirect_button_two" style = "top:481vh;" onClick = "learn_more('eye_second')">Learn More<span>
+
+
+            </div>
+            <div class="swiper-slide" id = "third_main_color">
+                
+                
+                
+                
+                 
+                
+                
+                <span id = "title" style = "top:499vh;">Medical Advancements (1/2)</span>
+                <div id = "content_holder" style = "top:509vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Radiation Therapy</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                       Radiation therapy makes use of high energy x-rays or other types of radiation to kill cancer cells. It is a common treatment for many forms of Eye Cancer, but is used most commonly to treat Intraocular Melanoma. 
+                        <br />
+                        <br />
+                        While radiation can often preserve some vision in the eye, this sometimes may be lost anyway if the radiation damages vital structures near the infected point. 
+                        <br />
+                        <br />
+                         
+
+                        
+                    </span>
+                   
+                        </div>
+             <span id = "redirect_button" class = "first_bad_button" onClick = "learn_more('eye_third')">Learn More<span>
+            
+            </div>
+            
+            <div class="swiper-slide" id = "fourth_main_color">
+                
+                <span id = "title" style = "top:582vh;">Medical Advancements (2/2)</span>
+                <div id = "content_holder" style = "top:592vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Ocular Surgery</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                       Although its application has been limited in recent years in favor of radiation therapy, surgery is sometimes used to treat certain forms of Eye cancers. 
+                        <br />
+                        <br />
+                        The <span class = "link" onClick = "window.open('http://www.cancer.org/cancer/eyecancer/detailedguide/eye-cancer-treating-intraocular-lymphoma', '_blank', 'location=yes');">exception to this is</span> Intraocular Lymphomas, where surgery is not an option due to the fact that the disease has almost certainly spread beyond the point of origin before such options are explored. 
+
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button_two" class = "second_bad_button" onClick = "learn_more('eye_fourth')">Learn More<span>
+                    
+                
+                
+                
+                </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                
+                
+                <span id = "title" style = "top:664vh;">How to Help (1/2)</span>
+                <div id = "content_holder" style = "top:675vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Eye Tumor Research Foundation</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        <span class = "link" onClick = "window.open('http://www.etrf.org/', '_blank', 'location=yes');">The Eye Tumor Research Foundation</span> is a foundation devoted to research in eye cancers in an effort to extend life and sight and improve patient care by developing and improving methods of diagnosis and treatments. 
+                        <br />
+                        <br />
+                        The contributions made to the foundation are specifically for one purpose—to provide support for research in the investigation of eye cancers.  
+                        <br />
+                        <br />
+                        
+                        
+                    </span>
+                    
+                </div>
+                
+               
+                    <span onClick = "window.open('http://www.etrf.org/donate.html', '_blank', 'location=yes');"> <span id = "redirect_button" class = "third_bad_button">Donate<span></span>
+
+                
+            
+            
+            
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+                <span id = "title" style = "top:747vh;">How to Help (2/2)</span>
+                <div id = "content_holder" style = "top:758vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Eye Cancer Foundation</span><br /><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        Established in 1998 as The EyeCare Foundation,<span class = "link" onClick = "window.open('https://www.eyecancer.com/', '_blank', 'location=yes');">The Eye Cancer Foundation</span> focuses on eye cancer and are an educational and supportive resource for eye cancer patients, their families, and physicians. 
+                        <br />
+                        <br />
+                        Their mission is oriented around enabling research efforts and providing much needed patient services. 
+                        
+                        
+                        <br />
+                        <br />
+                        
+                    </span>
+                    
+                </div>
+                
+                
+                <span onClick = "window.open('https://www.eyecancer.com/donate', '_blank', 'location=yes');"> <span id = "redirect_button_two" style = "top:813vh;">Donate<span></span>
+                    
+                    
+                    
+                    
+
+            </div>
+            <span id = "absolute_footer_donate" onTouchEnd = "leave_diseases();">Tap to return to Diseases</span>
+        </div>
+        
+        
+        <!-- Add Pagination -->
+       
+    </div>   
+			   
+			   
+			   
+			   
+           </span>
+	      	
+	        <br />
+	        <br />
+	
+			</span>
+	        </div>
+			</div>
+            
+                
+            </div>
+         <script src = "swiper.jquery.min.js"></script>
+        <script>
+              var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical'
+    });
+            </script>
+    </body>
+</html>

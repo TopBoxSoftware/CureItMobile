@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        <link href = "swiper.min.css" />
+        
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+            
+         html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #0D47A1;
+        color:white;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        color:white;
+    }
+            
+    .swiper-slide-modification
+    {
+        position: absolute;
+        background-color:#0D47A1;
+        color:#F2F2F2;
+        top:0px;
+        height:92vh;
+        width:500px;
+        left:0px;
+    }
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+		</script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_diseases('donation_card_one')" id = "the_body" class = "animated fadeIn" style = "overflow:hidden;">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Donate: Section I (Bl - En)</span>
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "nav_button" class = "first_nav" onClick = "window.location = 'donationCardsTwo.html'">Tap for Section II (Ey - Pa)</div>
+        
+        <div id = "full_wrapper_complete">
+		<span id = "full_wrapper_complete_no_effect">
+	   
+           <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide-modification donation_card" style = "position:absolute;left:0vw;height:90vh;width:100vw;">
+                <span id = "slider_header">Switch to List View</span>
+                
+                <span id = "slider_description" style = "top:15vh;">
+                Faster access to all supported charities
+                </span>
+                
+                <span id = "slider_description">
+               The list view provides easy access access to the full range of charities that we support. Although it is a faster way to donate, it is not possible to save charities to your profile from the list view.
+                </span>
+                
+                <span id = "slider_button" onClick = "window.location = 'donate.html'">Open List View</span>
+                
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:100vw;height:90vh;width:100vw;">
+            <img src = "img/heartOff.png" class = "slider_image" id = "BCAN" onTouchEnd = "save_charity('BCAN')"/>
+            <span id = "slider_header">Bladder Cancer Advocacy Network</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Bladder Cancers
+                </span>
+                
+                <span id = "slider_description">
+                    
+               Led by an expert panel of urologists, oncologists, radiation oncologists, and pathologists known as the Scientific Advisory Board, The Bladder Cancer Advocacy Network stands today as one of the most versatile cancer charities currently operating in the world today. 
+                </span>
+                
+                <span onTouchEnd = "window.open('https://49906.thankyou4caring.org/donatenow', '_blank', 'location=yes');"><span id = "slider_button">Donate</span></span>
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:200vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "BCC" class = "slider_image" onTouchEnd = "save_charity('BCC')"/>
+                 <span id = "slider_header">Bladder Cancer Canada</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Bladder Cancers
+                </span>
+                
+                <span id = "slider_description">
+                    This Canada-based charity provides a wide variety of resources to patients around the world. Their serivces include things such as interfacing with resource organizations, promoting education surrounding Bladder Cancer, and providing support to those who are suffering from the disease.
+                    
+        
+                </span>
+                
+                <span onTouchEnd = "window.open('https://bladdercancercanada.org/en/donate/', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:300vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "LLS" class = "slider_image" onTouchEnd = "save_charity('LLS')"/>
+                 <span id = "slider_header">Leukemia and Lymphoma society</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Blood Cancers
+                </span>
+                
+                <span id = "slider_description">
+                    This charity has long since established itself as one of the most reputable authorities in terms of Blood Cancer research. Their goals are threefold: to cure Blood Cancers, to improve the quality of life for patients and their families, and to promote general knowledge in regards to these terrible diseases. 
+        
+                </span>
+                
+                <span onTouchEnd = "window.open('https://donate.lls.org/lls/donate', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:400vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "LLR" class = "slider_image" onTouchEnd = "save_charity('LLR')"/>
+                 <span id = "slider_header">Leukaemia & Lymphoma Research</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Blood Cancers
+                </span>
+                
+                <span id = "slider_description">
+                   The Leukaemia & Lymphoma Research is a UK based organization dedicated to the elimination of Blood Cancers. Their mission is simple: to minimize the deaths resulting from these impactful diseases as well as utilizing the precise application of research to prevent people from developing Blood Cancer in the first place. 
+        
+                </span>
+                
+                <span onTouchEnd = "window.open('https://leukaemialymphomaresearch.org.uk/civicrm/contribute/transact?reset=1&id=5', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:500vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "BCRT" class = "slider_image" onTouchEnd = "save_charity('BCRT')"/>
+                 <span id = "slider_header">Bone Cancer Research Trust</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Bone Cancers
+                </span>
+                
+                <span id = "slider_description">
+                   They have been dedicated to stopping the spread of Bone Cancer since its inception in 2006. Their goals are ambitious, with plans to support the research of advanced Bone Cancers, raise awareness about the disease, enhance general knowledge about its influence, and to provide support for patients that already have it. 
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.bonecancerresearch.org.uk/f_donate.php', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:600vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "TSF" class = "slider_image" onTouchEnd = "save_charity('TSF')"/>
+                 <span id = "slider_header">The Sunbeam Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Bone Cancers
+                </span>
+                
+                <span id = "slider_description">
+                   The Sunbeam Foundation is an organization that works tirelessly to assist in the fight against Bone Cancers that afflict children and young adults. This is because people of this age group are the demographic most commonly affected by this terrible disease. 
+                </span>
+                
+                <span onTouchEnd = "window.open('https://secure.squarespace.com/commerce/donate?donatePageId=52b79f65e4b0ee585a53a209', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:700vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "ABTA" class = "slider_image" onTouchEnd = "save_charity('ABTA')"/>
+                 <span id = "slider_header">American Brain Tumor Association</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Brain Cancers
+                </span>
+                
+                <span id = "slider_description">
+                  Founded over 40 years ago, this charity was the first nonprofit organization in the world to set its sights solely on eliminating the risk of Brain Tumors. Every dollar donated to them is used to not only pursue breakthroughs in Brain Cancer diagnosis, but also to support the needs of both patients and those that look after them. 
+                </span>
+                
+                <span onTouchEnd = "window.open('https://secure2.convio.net/abta/site/Donation2;jsessionid=9DC62F7205DEAD22C1E17DE9966EEBA7.app272b?df_id=1500&1500.donation=form1', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:800vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "NBTS" class = "slider_image" onTouchEnd = "save_charity('NBTS')"/>
+                 <span id = "slider_header">National Brain Tumor Society</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Brain Cancers
+                </span>
+                
+                <span id = "slider_description">
+                   They have been searching tirelessly for potential breakthroughs in Brain Cancer research for well over 30 years now. Their goal is simple: to provide hope for those currently afflicted with a form of Brain Cancer while also funding boundry-pushing research to ensure that this issue becomes one of the past. 
+                </span>
+                
+                <span onTouchEnd = "window.open('https://secure2.convio.net/bts/site/Donation2?df_id=3940&3940.donation=form1#menu', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:900vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "NBCF" class = "slider_image" onTouchEnd = "save_charity('NBCF')"/>
+                 <span id = "slider_header">National Breast Cancer Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Breast Cancers
+                </span>
+                
+                <span id = "slider_description">
+                   Founded over 23 years ago by Breast Cancer survivor Janell Hail, this charity has cemented itself firmly among the top authorities in Breast Cancer Research. Their mission extends beyond the application of research, as they additionally hope to promote the widespread awareness, education, and early detection of various Breast Cancers. 
+                </span>
+                
+                <span onTouchEnd = "window.open('https://www.nationalbreastcancer.org/breast-cancer-donations', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1000vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "BCRF" class = "slider_image" onTouchEnd = "save_charity('BCRF')"/>
+                 <span id = "slider_header">Breast Cancer Research Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Breast Cancers
+                </span>
+                
+                <span id = "slider_description">
+                  A nonprofit organization that has raised well over half a billion dollars for Breast Cancer research in their 21 years of operation. They allocated over 91 percent of their total funds to the advancement of medical research as well as Breast Cancer awareness in general.  
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://give.bcrfcure.org/checkout/donation?eid=31404&_ga=1.239062789.448629387.1419877632', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1100vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "FCC" class = "slider_image" onTouchEnd = "save_charity('FCC')"/>
+                 <span id = "slider_header">Fight Colorectal Cancer</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Colorectal Cancers
+                </span>
+                
+                <span id = "slider_description">
+                This charity has been on the front lines of the fight against Colorectal Cancers for years now. They have dedicated themselves to promoting the development of new treatments as well as making sure the public is well educated on the causes of Colorectal Cancers, something that has done much to inspire hope in those who suffer from it. 
+
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://give.fightcrc.org/checkout/donation?eid=26925', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1200vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "NCCRA" class = "slider_image" onTouchEnd = "save_charity('NCCRA')"/>
+                 <span id = "slider_header">The NCCRA</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Colorectal Cancers
+                </span>
+                
+                <span id = "slider_description">
+                Their mission is to eradicate the threat of Colorectal Cancers for everyone. They attempt to do this by promoting and raising funds for medical screenings, scientific tests, and treatments. They attempt to do this by promoting and raising funding for medical screenings, scientific tests, and treatments. 
+
+
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.eifoundation.org/content/donate-nccra/', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1300vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "FWC" class = "slider_image" onTouchEnd = "save_charity('FWC')"/>
+                 <span id = "slider_header">Foundation for Women's Cancer</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Endometrial Cancers
+                </span>
+                
+                <span id = "slider_description">
+               They are an organization that has been tirelessly working to combat cancer in females since its inception in 1991. They attempt to reach this goal on three different fronts: raising public awareness, providing education, and supporting research for top institutions around the world. 
+
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://donatenow.networkforgood.org/FoundationForWomensCancer', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:1400vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "MKF" class = "slider_image" onTouchEnd = "save_charity('MKF')"/>
+                 <span id = "slider_header">The Mary Kay Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Endometrial Cancers
+                </span>
+                
+                <span id = "slider_description">
+              The Mary Kay Foundation is an organization founded in memoriam of Mary Kay, a cancer patient who died Thankgiving day 2001, and her dream to further cancer research to the benefit of patients all around the world.
+
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://secure3.convio.net/tmkf/site/Donation2;jsessionid=2C47305C279E144F55E17AE2AAA303B9.app303b?idb=360068408&DONATION_LEVEL_ID_SELECTED=1&df_id=1320&1320.donation=form1&idb=0', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">Slide 10</div>
+            
+            
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+        </span>
+        </div>
+        
+       
+        <script src = "swiper.jquery.min.js"></script>
+         <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 0,
+    });
+    </script>
+        
+    </body>
+</html>

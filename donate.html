@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+        
+        <!-- DROP DOWN MENU BEGIN -->
+        <link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+        <link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+        <link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        <style type="text/css">
+            .mm-menu
+            {
+                background: rgba( 0, 0, 0, 0.6 );
+                box-shadow: none !important;
+                text-align: center;
+                color: #fff;
+            }
+        .mm-menu .mm-listview
+        {
+            font-size: 18px;
+        }
+        .mm-menu .mm-listview li:after
+        {
+            content: none !important;
+        }
+        .mm-menu .mm-listview li a
+        {
+            padding: 15px 0;
+        }
+        .mm-menu li a:hover
+        {
+            background: rgba( 255, 255, 255, 0.1 );
+        }
+        .logo
+        {
+            border: 1px solid #fff;
+            line-height: 40px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 35px 0 20px 0;
+        }
+        </style>
+        <!-- DROP DOWN MENU END -->
+        
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src = "cordova.js"></script>
+        <!-- DROP DOWN MENU BEGIN -->
+        <script type="text/javascript">
+            $(function() {
+              $("#menu")
+              .mmenu({
+                     navbar 		: {
+                     title 		: false
+                     },
+                     offCanvas	: {
+                     position	: "top",
+                     zposition	: "front"
+                     }
+                     }).on( 'click',
+                           'a[href^="#/"]',
+                           function() {
+                           alert( "Thank you for clicking, but that's a demo link." );
+                           return false;
+                           }
+                           );
+              });
+            </script>
+        <!-- DROP DOWN MENU END -->
+        
+    </head>
+    
+    <body onLoad = "init_diseases('donation')" id = "the_body">
+        <span id = "whole_body"></span>
+        <!-- DROP DOWN MENU BEGIN -->
+        <div id="page">
+            <div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Donate</span>
+                <a href="#menu"></a>
+                
+            </div>
+        </div>
+        <nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+        <!-- DROP DOWN MENU END -->
+        
+        <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+            <span id = "full_wrapper_complete_no_effect">
+                <span id = "full_wrapper">
+                    <div class="box header_size_large" id = "head">Donate</div>
+                    <br />
+                    
+                    
+                </span>
+                
+                <div id = "disease_box_special" onClick = "window.location = 'donationCards.html'">
+                    
+                    <span id = "disease_box_header">Switch to Card View</span>
+                    <br />
+                    <span id = "disease_box_deaths">More specific information</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://49906.thankyou4caring.org/donatenow', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.20em;">Bladder Cancer Advocacy Network</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Bladder Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://www.bladdercancercanada.org/en/donate/', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Bladder Cancer Canada</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Bladder Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://donate.lls.org/lls/donate', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Leukemia and Lymphoma Society</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Blood Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://leukaemialymphomaresearch.org.uk/civicrm/contribute/transact?reset=1&id=5', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.2em;">Leukemia and Lymphoma Research</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Blood Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('http://www.bonecancerresearch.org.uk/f_donate.php', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Bone Cancer Research Trust</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Bone Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://secure.squarespace.com/commerce/donate?donatePageId=52b79f65e4b0ee585a53a209', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header"  style = "font-size:1.25em;">Sunbeam Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Bone Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://secure2.convio.net/abta/site/Donation2;jsessionid=9DC62F7205DEAD22C1E17DE9966EEBA7.app272b?df_id=1500&1500.donation=form1', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header"  style = "font-size:1.20em;">American Brain Tumor Association</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Brain Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://secure2.convio.net/bts/site/Donation2?df_id=3940&3940.donation=form1#menu', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">National Brain Tumor Society</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Brain Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://www.nationalbreastcancer.org/breast-cancer-donations', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.2em;">National Breast Cancer Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Breast Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://give.bcrfcure.org/checkout/donation?eid=31404&_ga=1.239062789.448629387.1419877632', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.2em;">Breast Cancer Research Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Breast Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://give.fightcrc.org/checkout/donation?eid=26925', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Fight Colorectal Cancer</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Colorectal Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('http://www.eifoundation.org/content/donate-nccra', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">The NCCRA</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Colorectal Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://donatenow.networkforgood.org/FoundationForWomensCancer', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Foundation for Women's Cancer</span>
+                    <br />
+                    <span id = "disease_box_deaths" style = "font-size:1.20em;">Type: Endometrial/General Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://secure3.convio.net/tmkf/site/Donation2;jsessionid=2C47305C279E144F55E17AE2AAA303B9.app303b?idb=360068408&DONATION_LEVEL_ID_SELECTED=1&df_id=1320&1320.donation=form1&idb=0', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Mary Kay Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths" style = "font-size:1.20em;">Type: Endometrial/General Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('http://www.etrf.org/donate.html', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Eye Tumor Research Organization</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Eye Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://www.eyecancer.com/donate', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Eye Cancer Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Eye Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('http://www.liver-research.org.uk/liver-research-donations/donation.html', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Foundation for Liver Research</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Liver Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('http://www.upmc.com/Services/liver-cancer/research/Pages/donate.aspx', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Liver Cancer Research Fund</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Liver Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://www3.thedatabank.com/dpg/508/spdf.asp?formid=donates', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.20em;">Breath of Hope Lung Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Lung Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://app.etapestry.com/hosted/LungCancerFoundationofAmer/OnlineDonation.html', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.2em;">Lung Cancer Foundation of America</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Lung Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('http://smokefree.gov/ready-to-quit', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">SmokeFree.gov</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Lung Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://community.lymphoma.org/', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Lymphoma Research Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Lymphatic/Blood Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://www.givedirect.org/give/givefrm.asp?CID=10146', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Lymphoma Foundation of America</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Lymphatic/Blood Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://donate.oralcancer.org/index.cfm?fuseaction=donate.general', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Oral Cancer Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Oral Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('http://www.mouthcancerfoundation.org/get-involved/donate-mouth-cancer-foundation', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Mouth Cancer Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Oral Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=475938&en=4nLxHFMfG3LGKPOiE2LDKLOsFhLKKSMuFfIKKYOALrE', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Ovarian Cancer Research Fund</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Ovarian Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://secure.2dialog.com/ovarian/main.php/micro_sites/showpage/id/99', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">National Ovarian Cancer Coalition</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Ovarian Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://www.lustgarten.org/donate', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Lustgarten Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Pancreatic Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://www.pancan.org/donate-now/', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Pancreatic Cancer Action Network</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Pancreatic Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://interland3.donorperfect.net/weblink/weblink.aspx?name=skincancer&id=16', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Skin Cancer Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Skin Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('http://www.americanskin.org/donate/', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">American Skin Association</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Skin Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box" onClick = "window.open('https://tcsa.memberclicks.net/index.php?option=com_mc&view=formlogin&form=84782&return=L2luZGV4LnBocD9vcHRpb249Y29tX21jJnZpZXc9bWMmbWNpZD1mb3JtXzg0NzgyP3NlcnZJZD0zMzU5Jm9wdGlvbj1jb21fbWMmdmlldz1tYyZtY2lkPWZvcm1fODQ3ODI=', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.1em;">Thyroid Cancer Survivors' Association</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Thyroid Cancers</span>
+                    
+                </div>
+                
+                <div id = "disease_box_special" onClick = "window.open('http://www.lightoflifefoundation.org/Ways-to-Help/Donate', '_blank', 'location=yes');" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header" style = "font-size:1.25em;">Light of Life Foundation</span>
+                    <br />
+                    <span id = "disease_box_deaths">Type: Thyroid Cancers</span>
+                    
+                </div>
+                
+                                <div id = "disease_box_two" style = "background-color:#38CA8B;margin-bottom:30px;" onClick = "window.location = 'start_page.html'" onTouchEnd = "run()">
+                    
+                    <span id = "disease_box_header">Diseases</span>
+                    <br />
+                    <span id = "disease_box_deaths">Learn about the problem</span>
+                    
+                </div>
+                
+                <br />
+                <br />
+                
+              
+            </span>
+        </div>
+        </div>
+        
+        
+    </body>
+</html>

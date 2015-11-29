@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+        <link href = "swiper.min.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                            
+                              ['Females', 24],
+                              ['Males', 76]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_other_page()" id = "the_body" style = "background-color:#2196F3;">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Drug Usage Advancements</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		<div id = "other_header">Advancements in Drugs</div>
+    
+		
+		<div id = "body_content">
+			<br />
+			<span id = "sub_header">What does this mean?</span>
+            <hr />
+            <span style = "position:relative;top:-30px;">
+            Recent discoveries have done much to allow researchers to utilize various drug combinations in their efforts to boost the survival rate of Colorectal Cancer patients. 
+			<br />
+			<br />
+			
+			These drugs provide patients everywhere with more options, something that serves to enhance the comfort and health of those suffering from the disease. </span>
+		
+            
+             </span>
+            <span id = "sub_header">Irinotecan</span>
+              <hr />
+        <span style = "position:relative;top:-30px;">
+              One of these drugs is <span class = "link" onClick = "window.open('http://www.cancer.org/treatment/treatmentsandsideeffects/guidetocancerdrugs/irinotecan', '_blank', 'location=yes');">Irinotecan</span>, which is a chemotherapy drug that specifically attempts to block the action of an enzyme associated with keeping cancer cells in their proper form. 
+            <br />
+            <br />
+            Cancer cells typically divide far faster than healthy cells, and thus are more likely to be targeted by the drug. 
+			<br />
+			<br />
+			While side effects do exist, Irinotecan has proved itself to be a valuable tool in the arsenal of doctors, and has kept people healthy since its <span class = "link" onClick = "window.open('http://www.cancer.org/treatment/treatmentsandsideeffects/guidetocancerdrugs/irinotecan', '_blank', 'location=yes');">approval by the FDA in 1996</span>.   
+        </span>
+
+              
+            <span id = "sub_header">Eloxatin</span>
+            <hr />
+             <span style = "position:relative;top:-30px;">
+                 Another drug recently approved for the treatment of Colorectal Cancers is <span class = "link" onClick = "window.open('http://products.sanofi.us/eloxatin/eloxatin.html', '_blank', 'location=yes');">Eloxatin</span>. 
+                 <br />
+                 <br />
+                  While it is typically used in combination with other drugs, the use of Eloxatin has been associated with a <span class = "link" onClick = "window.open('http://www.webmd.com/colorectal-cancer/features/colorectal-cancer-new-treatments-improved-prognosis', '_blank', 'location=yes');">whopping 11 percent</span> in 5-year survival rates in some cases. 
+                 <br />
+                 <br />
+                 It is through advancements such as these that we can give hope to those who may otherwise have very little. 
+    
+           </span>
+             <br />
+             
+            <div id = "return_button" onTouchEnd = "go_back();">Go Back</div>
+               
+            <br />
+            <br />
+		</div>
+		<!-- Maybe make the color fade from green to a light red -->
+          </body>
+</html>

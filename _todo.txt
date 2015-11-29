@@ -1,0 +1,10 @@
+
+To Do:
+- The Cure It Project page in the resources does not currently link to a website. It should link to our desktop website. 
+- The "Desktop Version" button on the opening hub currently does nothing. It should link to our desktop version.
+- "ovarian_fourth.html" has some issues on iPad. Check it out. 
+-Search localStorage.getItem("twitter") == "true" and add that functionality 
+Persistant bugs:
+- Inconsistent menu behavior in regards to the background content. Figure out how to make it consistent and functional. 
+- Resources page does not display properly on Moto G
+- Check out the bottom buttons on the donation card pages...they seem to be having an issue with scaling on iPhones

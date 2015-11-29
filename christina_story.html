@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+        <link href = "swiper.min.css" />
+
+        <script type = "text/javascript">
+            jQuery(document).ready(function($){
+                incrementStory("christna");
+            });
+        </script>
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                            
+                              ['Females', 24],
+                              ['Males', 76]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_other_page()" class = "animated fadeIn" id = "the_body" style = "background-color:#009688">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Christina's Story</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		<div id = "other_header">Christina Shaw</div>
+    
+		
+        
+		<div id = "body_content">
+			 <br />
+            <span id = "disclaimer">Some of the names and places featured in this interview may have been changed to protect the identities of those involved.</span>
+            <br />
+			<span id = "sub_header_stories">When and how did you first find out you had cancer?</span>
+            <hr />
+            <span style = "position:relative;top:-30px;">
+			My diagnosis came in a really roundabout way since almost nobody suspected something as serious as cancer. I'd had a persistent cough from around April 2012 before I was diagnosed; it started as that kind of cough that sometimes lingers after you've had a cold, so I didn't think much of it. 
+                <br />
+                <br />
+                It slowly progressed to where I'd cough until I gagged (also not too unusual), and eventually I was coughing until I threw up. I started googling what the hell could be causing this, and a lot of the results had to do with acid reflux, so I started watching what I ate...didn't help. 
+                <br />
+                <br />
+                I finally caved and saw a pulmonologist in August of 2013 (I didn't have insurance back then, so I didn't want to drop $100 to see a doctor over a little cough), and he surmised it could be acid reflux, allergies, asthma, or postnasal drip, and prescribed a ton of different medications to fight all of the above. 
+                <br />
+                <br />
+                I spent over $1000 on the medication, but was happy to do so because he assured me one of those diagnoses was right and I would be rid of the cough within a few weeks. Of course it never happened. At one point I even asked him if it could be cancer; he asked me if the x-ray I'd taken a few months back (I cracked my rib from coughing too much) showed anything, and when I told him it was clear, he said it wasn't cancer. 
+                <br />
+                <br />
+                I felt silly for asking and didn't bring it up again. I went to an urgent care clinic a few months later about the vomiting, and they said it was probably food poisoning, but the nurse practitioner ordered blood tests just in case. They showed elevated levels of some enzyme in my liver, so she ordered a retest after a month..and it came back with similar results. 
+                <br />
+                <br />
+                After three more months I had it retested, and when she saw the levels had doubled, she strongly advised going to the ER about this, as it may have been indicative of some sort of bone disease. While all that was going on, I started developing a pain in my lower back...kinda like when you sleep wrong and you wake up a little sore, only my pain didn't go away as the day went on.
+                <br />
+                <br />
+                I switched my mattress out and tried different chairs at work, and I saw a chiropractor, accupuncturist, and physical therapist, but none of that helped. Eventually the pain spread to my hip and got so bad I couldn't walk without a cane. When I went to the ER, I mentioned my hip pain, so they took an x-ray of it...and noticed some unusual growth there. So they ordered a hip MRI, bone scan, and CT scan of my torso.
+                <br />
+                <br />
+                This all happened at the end of February 2014. The result: stage IV lung cancer (the biggest tumor was the size of my fist) that had spread to my bone (lumbar spine and hip), liver, and brain. Unfortunately it's not curable, and the only treatment they could give me was to lessen the pain and symptoms. 
+
+                
+                
+             </span>
+            <span id = "sub_header_stories">How has having cancer influenced your relationships with friends and family members?</span>
+              <hr />
+              <span style = "position:relative;top:-30px;">
+          With some friends, they distanced themselves from me...a couple even cut themselves off completely. And there were a few people I met who didn't know I had cancer, but when they found out they started suddenly becoming too busy to hang out. I can't prove it's related, but it's a hell of a coincidence.
+                <br />
+                <br />
+                  Fortunately, most of my friends were sympathetic, and quite a few came out of the woodwork to offer support when I needed it the most. A lot of strangers — friends of friends — reached out and got to know me because they wanted to be there for me and my family.
+                <br />
+                <br />
+                  I also came to realize that a few people would use my cancer to get sympathy for themselves — one girl started crying over me as if I were already dead (yes while I was there), and everyone (including me) had to comfort her!
+                <br />
+                <br />
+                  A couple other people would post constantly on facebook how torn up they were over my diagnosis, how they couldn't cope, how much I mean to them, etc etc...yet they hardly spoke to me and flaked whenever I tried to hang out with them. I found this more painful [and] frustrating than the people who just dropped me completely...I don't like "friends" who talk about how much they care about me but act the opposite.
+                <br />
+                <br />
+                  With my family, the reaction has all been positive. Relatives I hadn't heard from in years reached out, and I reconnected with cousins and my young nieces whom I hadn't met yet. My mom and I got closer, and even though we've had our share of fights out of frustration or maybe repressed anger over the situation, we've been able to share a lot of "bucket list" experiences since the diagnosis that we wouldn't have done if not for the cancer.
+                  <br />
+                  <br />
+                  I can't say for sure, but I feel like the cancer's had a negative impact on my relationship with my husband. We haven't been happy together for several years now, but I think he's more unwilling to split now than ever because of the diagnosis. I mean, you can imagine how bad it would look for a guy to leave his wife after she gets a terminal cancer diagnosis. So we stay together, and neither of us is really happy anymore.
+
+            
+            </span>
+              
+            
+            
+             
+              
+            <span id = "sub_header_stories">How have you coped with the situation?</span>
+            <hr />
+             <span style = "position:relative;top:-30px;">
+               When I first got my diagnosis, I was initially in shock and unknowingly tuned out most of what the doctor said after "cancer". I had to excuse myself to go out in the hall and cry, and I think that was one of less than five times I've cried over this whole situation to date. After I came to terms with the diagnosis, I focused all my time, energy, and money on fulfilling my bucket list. 
+                 <br />
+                 <br />
+                 It's kind of materialistic or shallow - I'm not sure what word I'm looking for — but it's helped me tremendously because it gives me something to focus on besides the pain and side effects. Another huge coping mechanism for me has been hockey. 
+                 <br />
+                 <br />
+                 I was already a big fan, but after my diagnosis hockey took up a huge part of my life — I never missed a single game, even watching on my phone in the hospital, and I traveled to twelve of the thirty NHL arenas to watch games this past season. 
+                 <br />
+                    <br />
+                 It's been a wonderful distraction and a great thing for me to look forward to every day...so you can imagine how hard this offseason's been for me! I'm actually planning to move from Los Angeles to Nashville to I can become a season ticket holder for my favorite hockey team (also because Nashville has two great cancer centers...but I'm not gonna lie, hockey is the biggest reason I want to move). 
+                 <br />
+                 <br />
+                 People tell me how brave or inspirational I am for not letting the cancer get me down - I do have moments where I just want to lie in bed and cry all day, or when I wish I was already dead, but for the most part I try to remain upbeat and focus on the positive. 
+                 <br />
+                 <br />
+                 In my opinion, I'm not a hero, I'm just doing the best with the shitty hand I've been dealt. I'd rather get out there and live life to the fullest than sit at home and feel sorry for myself until my time's up. 
+
+            </span> 
+            
+                
+            
+                
+                 
+                 
+    
+           </span>
+             <br />
+        
+            <div id = "return_button" onTouchEnd = "window.location = 'lungCancer.html';">Lung Cancers</div> 
+            <div id = "return_button" onTouchEnd = "go_back();">Go Back</div>
+               
+            <br />
+            <br />
+		</div>
+		<!-- Maybe make the color fade from green to a light red -->
+          </body>
+</html>

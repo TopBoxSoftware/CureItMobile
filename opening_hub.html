@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 16px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			
+			
+			
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+					
+			});
+			
+			
+		</script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_disease_page('explore')" id = "the_body" style = "background-color:#0C2233;" class = "animated fadeIn">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn" >Explore</span>
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+		<span id = "full_wrapper_complete_no_effect">
+	        <span id = "full_wrapper">
+	            <div class="box header_size_large" id = "head" style = "color:#EEEEEE;font-weight:ligh">Explore</div>
+	              <br />
+				  
+				  
+				  
+            <!-- Each gap represents a row of elements -->
+			
+			
+			<span class = "massive_resource_element box_resource box_color_one left_box right_box standard" style = "margin-top:5%;" onClick = "location.reload();">New Exploration</span>
+			
+			<span onClick = "checkLink('box1')" id = "box1" class = "small_resource_element box_resource box_color_two left_box standard">Resources</span>
+			<span id = "box2" onClick = "checkLink('box2')" class = "medium_resource_element box_resource box_color_three left_box standard">Bladder Cancer</span>
+			
+			<span onClick = "checkLink('box3')" id = "box3" class = "medium_resource_element box_resource box_color_one left_box standard">Brain Cancer</span>
+			<span onClick = "checkLink('box4')" id = "box4" class = "small_resource_element box_resource box_color_two left_box standard">My Profile</span>
+			
+			<span onClick = "checkLink('box5')" id = "box5" class = "tiny_resource_element box_resource box_color_three left_box standard">Donate</span>
+			<span onClick = "checkLink('box6')" id = "box6" class = "large_resource_element box_resource box_color_one left_box standard">Komi's Story</span>
+			
+			<span onClick = "checkLink('box7')" id = "box7" class = "large_resource_element box_resource box_color_two left_box standard">Testicular Cancer</span>
+			<span onClick = "checkLink('box8')" id = "box8" class = "tiny_resource_element box_resource box_color_one left_box standard">Stories</span>
+			
+			<span onClick = "checkLink('box9')" id = "box9" class = "massive_resource_element box_resource box_color_one left_box right_box standard">Brain Cancer</span>
+			
+			<span onClick = "checkLink('box10')" id = "box10" class = "medium_resource_element box_resource box_color_two left_box standard">Breast Cancer</span>
+			<span onClick = "checkLink('box11')" id = "box11" class = "small_resource_element box_resource box_color_three left_box standard">Allie's Story</span>
+			
+			<span onClick = "checkLink('box12')" id = "box12" class = "small_resource_element box_resource box_color_one left_box standard">Jay's Story</span>
+			<span onClick = "checkLink('box13')" id = "box13" class = "medium_resource_element box_resource box_color_two left_box standard">Eye Cancer</span>
+			
+			<span onClick = "checkLink('box14')" id = "box14" class = "large_resource_element box_resource box_color_two left_box standard">Blood Cancer</span>
+			<span onClick = "checkLink('box15')" id = "box15" class = "tiny_resource_element box_resource box_color_one left_box standard">Random</span>
+			
+			<span onClick = "checkLink('box16')" id = "box16" class = "medium_resource_element box_resource box_color_three left_box standard">Lung Cancer</span>
+			<span onClick = "checkLink('box17')" id = "box17" class = "small_resource_element box_resource box_color_two left_box standard">Jake's Story</span>
+			
+			<span onClick = "checkLink('box18')" id = "box18" class = "massive_resource_element box_resource box_color_one left_box right_box standard">Endometrial Cancer</span>
+			
+			<span onClick = "checkLink('box19')" id = "box19" class = "small_resource_element box_resource box_color_two left_box standard">Lisa's Story</span>
+			<span onClick = "checkLink('box20')" id = "box20" class = "medium_resource_element box_resource box_color_one left_box standard">Oral Cancer</span>
+			
+			<span onClick = "checkLink('box21')" id = "box21" class = "medium_resource_element box_resource box_color_one left_box standard">Shobi's Story</span>
+			<span onClick = "checkLink('box22')" id = "box22" class = "small_resource_element box_resource box_color_three left_box standard">Skin Cancer</span>
+			
+			<span onClick = "checkLink('box23')" id = "box23" class = "tiny_resource_element box_resource box_color_two left_box standard">Ovarian</span>
+			<span onClick = "checkLink('box24')" id = "box24" class = "large_resource_element box_resource box_color_one left_box standard">Share your story</span>
+			
+			<span onClick = "checkLink('box25')" id = "box25" class = "small_resource_element box_resource box_color_one left_box standard">Liver Cancer</span>
+			<span onClick = "checkLink('box26')" id = "box26" class = "medium_resource_element box_resource box_color_two left_box standard">Christina's Story</span>
+			
+			<span onClick = "window.open('http://thecureitproject.com/', '_blank', 'location=yes')" id = "box27" class = "medium_resource_element box_resource box_color_three left_box standard">Web Version</span>
+			<span onClick = "window.location = 'start_page.html'" id = "box28" class = "small_resource_element box_resource box_color_one left_box standard">Diseases</span>
+			
+			<!-- Make these fit in with the rest of the page (change sizes) -->
+			<!--
+			<span onClick = "checkLink('box27')" id = "box27" class = "massive_resource_element box_resource box_color_three left_box right_box standard" onClick = "location.reload();">Desktop Version</span>
+			<span onClick = "checkLink('box27')" id = "box27" class = "massive_resource_element box_resource box_color_one left_box right_box standard" onClick = "window.location = 'start_page.html'">Continue to Diseases</span>
+			-->
+			</span>
+	        </div>
+			</div>
+        </div>
+        
+       
+
+    </body>
+</html>

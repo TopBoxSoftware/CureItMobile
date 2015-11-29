@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+         <link href = "swiper.min.css" />
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script src="sweetalert-dev.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+       
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                              ['Papillary Carcinomas', 80],
+                              ['Follicular Carcinomas', 17],
+                              ['Hurthle Cell Carcinomas', 3]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1', '#4CAF50']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+        <script type = "text/javascript">
+            jQuery(document).ready(function($){
+                incrementDisease("thyroid");
+            });
+        </script>
+		
+    </head>
+	
+    <body onLoad = "init_disease_page()" class = "first_main_color" id = "the_body">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Thyroid Cancers</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+            
+		<span id = "full_wrapper_complete_no_effect">
+	        <span id = "full_wrapper">
+	       <!--     <div class="box header_size_large" id = "head">thyroid Cancer</div>
+	              <br /><br />
+                <span class = "gray_sub_header">Over 28 people are diagnosed with thyroid Cancer every day in the UK alone.</span>
+	           -->
+          
+			  <div class="swiper-container">
+                  
+        <div class="swiper-wrapper">
+			<div id = "first_preview_pane"></div>
+			
+            <span class="swiper-slide">
+			<div id = "disease_header">Thyroid Cancer</div>
+			
+			<div id = "content_holder">
+			<span id = "fact">Thyroid Cancers is the 5th most common form of cancer currently active in the world</span><br />
+			
+            <div id = "index_button" style = "top:12vh;" onClick = "swiper.slideTo(4, 1000);" onTouchEnd = "run()">Types of Thyroid Cancer</div>
+            <div id = "index_button" style = "top:31vh;" onClick = "swiper.slideTo(6, 1000);" onTouchEnd = "run()">Medical Advancements</div>
+            <div id = "index_button" style = "top:50vh;" onClick = "swiper.slideTo(8, 1000);" onTouchEnd = "run()">How to Help</div>
+            
+			</div>
+			
+                
+                
+                
+                
+                
+                
+                
+			
+                
+                
+                
+                
+                
+                
+                
+			</span>
+            <span class="swiper-slide" id = "second_main_color">
+				<span id = "title">Introduction (1/3)</span>
+				<div id = "content_holder" style = "top:94vh;">
+                    In its most basic form, <span onClick = "window.open('http://www.nlm.nih.gov/medlineplus/thyroidcancer.html', '_blank', 'location=yes');" class = "link">Thyroid Cancer</span> is defined as the uncontrollable growth of cells in the thyroid gland, a butterfly-shaped gland located just below the center of the neck. 
+                    <br />
+                    <br />
+                    There are 3 different types of Thyroid Cancers:  <span onClick = "window.open('http://www.endocrineweb.com/conditions/thyroid-cancer/papillary-cancer', '_blank', 'location=yes');" class = "link">Papillary Carcinomas</span>, <span onClick = "window.open('http://emedicine.medscape.com/article/278488-overview', '_blank', 'location=yes');" class = "link">Follicular Carcinomas</span>, and <span onClick = "window.open('http://emedicine.medscape.com/article/279462-overview', '_blank', 'location=yes');" class = "link">Hurthle Cell Carcinomas</span>. 
+                  <br />
+                  <br />
+                  All of these will be discussed in great detail below.  
+                </div>
+				
+			</span>
+            <div class="swiper-slide" id = "third_main_color">
+                <span id = "title" style = "top:168vh">Introduction (2/3)</span>
+                <div id = "content_holder" style = "top:176vh;">
+                    The <span onClick = "window.open('http://www.lightoflifefoundation.org/About-Thyroid-Cancer/About-the-Thyroid-Gland', '_blank', 'location=yes');" class = "link">thyroid</span> is essentially a large ductless gland in the neck that secretes special hormones that control certain aspects of growth through manipulating the rate of metabolism. 
+                    <br />
+                    <br />
+                    Cancer of the thyroid is fairly common relative to other cancers, and scientists are <span class = "link" onClick = "window.open('http://www.webmd.com/cancer/tc/thyroid-cancer-cause', '_blank', 'location=yes');">still trying to unravel</span> the mystery of what causes it. 
+					<br />
+					<br />
+					Fortunately, <span class = "link" onClick = "window.open('http://www.cancer.org/cancer/thyroidcancer/detailedguide/thyroid-cancer-signs-symptoms', '_blank', 'location=yes');">the largely visible symptoms</span> of Thyroid Cancer make eary detection fairly easy, something which means that the vast majority of people who contract the disease eventually make a significant recovery.  
+                      
+                   
+                    </div>
+                
+                
+                </div>
+            <div class="swiper-slide" id = "fourth_main_color">
+                <span id = "title" style = "top:251vh;">Introduction (3/3)</span>
+                <div id = "content_holder" style = "top:259vh;">
+                    As can be seen in the graph below, <span style="color:#C62828">Papillary Carcinomas</span>are easily the most common type of Thyroid Cancer, account for 80% of total cases, closely followed by <span style="color:#0D47A1">Follicular Carcinomas</span>, and finally, <span style="color:#4CAF50">Hurthle Cell Carcinomas</span>. 
+                    
+                    <div id="chart_div" style = "position:relative;top:-45px;"></div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+                
+                
+                
+            </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                <span id = "title" style = "top:334vh;">Types of Cancer (1/2)</span>
+                <div id = "content_holder" style = "top:344vh;">
+                    
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Papillary Carcinomas</span><br />
+                    </span>
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                    As illustrated by the chart above, Papillary Carcinomas are the most frequent form of Thyroid Cancer. It is essential to first understand the implications of the cancer in regards to its location in the <span class = "link" onClick = "window.open('http://www.webmd.com/women/picture-of-the-thyroid', '_blank', 'location=yes');">thyroid</span>. 
+                        <br /><br />
+                        The main purpose of the thyroid to regulate the prominence of certain hormones by sending them to key points in the body. This means that the thyroid has access to nearly every major organ in the body, something that enables cancerous cells to spread quickly and broadly.   
+                        <br />
+                        <br />
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button" style = "top:398vh;" onClick = 'learn_more("thyroid_first")'>Learn More<span>
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+            
+            <span id = "title" style = "top:416vh;">Types of Cancer (2/2)</span>
+            <div id = "content_holder" style = "top:426vh;">
+                <span class = "center_inline">
+                    <span id = "fact" class = "first_mod all_apply">Follicular Carcinomas</span><br />
+                </span>
+                
+                <span style = "position:relative;top:-15px;">
+                    Follicular Carcinomas are a relatively rare subset of Thyroid Cancer, accounting for just 17% of total cases. They share many similarities with Papillary Carcinomas, and as such are often described as being a specific varient of that form of Thyroid Cancer.  
+                    <br />
+                    <br />
+                    Both spread relatively easily, and both oiginate within the thyroid. However, there are a few differences that set it apart from other varients of Thyroid Cancer.                   
+                    <br />
+                    <br />
+                
+                </span>
+                
+            </div>
+            
+            <span id = "redirect_button_two" style = "top:481vh;" onClick = "learn_more('thyroid_second')">Learn More<span>
+
+
+            </div>
+            <div class="swiper-slide" id = "third_main_color">
+                
+                
+                <span id = "title" style = "top:499vh;">Medical Advancements (1/2)</span>
+                <div id = "content_holder" style = "top:509vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Radioactive Iodine</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        <span class = "link" onClick = "window.open('http://www.cancer.org/cancer/thyroidcancer/detailedguide/thyroid-cancer-treating-radioactive-iodine', '_blank', 'location=yes');">Radioactive Iodine</span> is one of the most exciting new developments in the field of Thyroid Cancer research. 
+                        <br />
+                        <br />
+                        
+                        They exist as a relative noninvasive means to treat particularly advanced cases of Thyroid Cancer, and can even be used in situations in which the cancer has spread beyond its point of origin.  
+                       
+                       
+                        <br />
+                        <br />
+                        
+                    </span>
+                   
+                        </div>
+             <span id = "redirect_button" class = "first_bad_button" onClick = "learn_more('thyroid_third')">Learn More<span>
+            
+            </div>
+            
+            <div class="swiper-slide" id = "fourth_main_color">
+                
+                <span id = "title" style = "top:582vh;">Medical Advancements (2/2)</span>
+                <div id = "content_holder" style = "top:592vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Thyroidectomy</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        A <span class = "link" onClick = "window.open('http://www.mayoclinic.org/tests-procedures/thyroidectomy/basics/definition/prc-20019864', '_blank', 'location=yes');">Thyroidectomy</span> involves the removal of all of most of the thyroid in an attempt to halt the advancement of cancerous cells. 
+                        <br />
+                        <br />
+                        This is an especially new form of treatment, as scientists and doctors were previously not able to emulate the functioning of the thyroid. 
+                        <br />
+                        <br />
+                        Recent advancements have made treatments such as this increasingly practical and effective. 
+                        <br />
+                        <br />
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button_two" class = "second_bad_button" onClick = "learn_more('thyroid_fourth')">Learn More<span>
+                    
+                
+                
+                
+                </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                
+                
+                <span id = "title" style = "top:664vh;">How to Help (1/2)</span>
+                <div id = "content_holder" style = "top:675vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Thyroid Cancer Survivors' Association</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        The organization has made a targeted effort to act on levels both local and global in order to accomplish these goals. 
+                        <br />
+                        <br />
+                       In accordance with this fact, <span class = "link" onClick = "window.open('http://www.thyca.org/sg/')">they sponsor support groups</span> that are active on the internet and in individualized communities as well as <span class = "link" onClick = "window.open('http://www.thyca.org/medical-professionals/', '_blank', 'location=yes');">provide resources</span> to better help physicians and patients alike come to terms with the many complexities of Thyroid Cancer.   
+                        
+                        <br /><br />
+                        
+                    </span>
+                    
+                </div>
+                
+               
+                    <span onClick = "window.open('https://tcsa.memberclicks.net/index.php?option=com_mc&view=formlogin&form=84782&return=L2luZGV4LnBocD9vcHRpb249Y29tX21jJnZpZXc9bWMmbWNpZD1mb3JtXzg0NzgyP3NlcnZJZD0zMzU5Jm9wdGlvbj1jb21fbWMmdmlldz1tYyZtY2lkPWZvcm1fODQ3ODI='', '_blank', 'location=yes');"> <span id = "redirect_button" class = "third_bad_button">Donate<span></span>
+
+                
+            
+            
+            
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+                <span id = "title" style = "top:747vh;">How to Help (2/2)</span>
+                <div id = "content_holder" style = "top:758vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Light of Life Foundation</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                        <span class = "link" onClick = "window.open('http://www.lightoflifefoundation.org/', '_blank', 'location=yes');">The Light of Life Foundation</span> is an organization that works tirelessly to improve the quality of life for Thyroid Cancer patients through the promotion of education of the general public as well as the establishment of improved research efforts within the medical community. 
+                        <br />
+                        <br />
+                        Their mission is one of charity, and as such largely relies on the continued support of the public to achieve their selfless goals.  				
+											<br />
+											<br />
+											
+                        
+                    </span>
+                    
+                </div>
+                
+                
+                <span onClick = "window.open('http://www.lightoflifefoundation.org/Ways-to-Help/Donate', '_blank', 'location=yes');"> <span id = "redirect_button_two" style = "top:813vh;">Donate<span></span>
+                    
+                    
+                    
+                    
+
+            </div>
+            <span id = "absolute_footer_donate" onTouchEnd = "leave_diseases();">Tap to return to Diseases</span>
+        </div>
+        
+        
+        <!-- Add Pagination -->
+       
+    </div>   
+			   
+			   
+			   
+			   
+           </span>
+	      	
+	        <br />
+	        <br />
+	
+			</span>
+	        </div>
+			</div>
+            
+                
+            </div>
+         <script src = "swiper.jquery.min.js"></script>
+        <script>
+              var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical'
+    });
+            </script>
+    </body>
+</html>

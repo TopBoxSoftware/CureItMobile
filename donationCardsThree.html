@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html> 
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        <link href = "swiper.min.css" />
+        
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+            
+         html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #0D47A1;
+        color:white;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        color:white;
+    }
+            
+    .swiper-slide-modification
+    {
+        position: absolute;
+        background-color:#0D47A1;
+        color:#F2F2F2;
+        top:0px;
+        height:92vh;
+        width:500px;
+        left:0px;
+    }
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+		</script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_diseases('donation_card_three')" id = "the_body" class = "animated fadeIn" style = "overflow:hidden;">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Donate: Section III (Sk - Th)</span>
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "nav_button_half" class = "second_nav" onClick = "window.location = 'donationCardsTwo.html'">Section II (Ey - Pa)</div>
+        <div id = "nav_button_half" class = "third_nav" onClick = "window.location = 'donationCardsFour.html'" style = "left:50vw;">Free Methods</div>
+        <div id = "full_wrapper_complete">
+		<span id = "full_wrapper_complete_no_effect">
+	   
+           <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide-modification donation_card" style = "position:absolute;left:0vw;height:90vh;width:100vw;">
+                <span id = "slider_header">Switch to List View</span>
+                
+                <span id = "slider_description" style = "top:15vh;">
+                Faster access to all supported charities
+                </span>
+                
+                <span id = "slider_description">
+               The list view provides easy access access to the full range of charities that we support. Although it is a faster way to donate, it is not possible to save charities to your profile from the list view.
+                </span>
+                
+                <span id = "slider_button" onClick = "window.location = 'donate.html'">Open List View</span>
+                
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:100vw;height:90vh;width:100vw;">
+            <img src = "img/heartOff.png" id = "SCF" class = "slider_image" onTouchEnd = "save_charity('SCF')"/>
+            <span id = "slider_header">The Skin Cancer Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Skin Cancers
+                </span>
+                
+                <span id = "slider_description">
+                    
+             They are currently the only international organization whose sole focus is improving the prevention and treatment of Skin Cancer. They are responsible for the distribution of millions of medically-reviewed pamphlets, posters, books, and newsletters annually, all of which contribute to Skin Cancer education.
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://interland3.donorperfect.net/weblink/weblink.aspx?name=skincancer&id=16', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:200vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "ASA" class = "slider_image" onTouchEnd = "save_charity('ASA')"/>
+                 <span id = "slider_header">The American Skin Association</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Skin Cancers
+                </span>
+                
+                <span id = "slider_description">
+                  They have spent the past two decades fighting against Skin Cancers through the application of research grants and public outreach programs. They seek to make sure that everyone, regardless of race, age, or social status, has the opportunity to recieve education regarding the dangers of skin diseases.
+        
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.americanskin.org/donate/', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            <div class="swiper-slide-modification" style = "position:absolute;left:300vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "TCS" class = "slider_image" onTouchEnd = "save_charity('TCS')"/>
+                 <span id = "slider_header">The Testicular Cancer Society</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Testicular Cancers
+                </span>
+                
+                <span id = "slider_description">
+                 The Testicular Cancer Society has taken a varied and aggressive approach in their fight against Testicular Cancers. They attempt to raise awareness about the harms of the disease while also offering support to those who are already suffering from it. 
+
+        
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.testicularcancersociety.org/donate.html', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:400vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "TCAF" class = "slider_image" onTouchEnd = "save_charity('TCAF')"/>
+                 <span id = "slider_header">TCAF</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Testicular Cancers
+                </span>
+                
+                <span id = "slider_description">
+                 The Testicular Cancer Awareness Foundation is a nonprofit that strives to heighten the general public's awareness of the threat of Testicular Cancers. They seek to tear down the stigma and unnecessary unembarrassment that is associated with a Testicular Cancer diagnosis. 
+
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.testicularcancerawarenessfoundation.org/donation-opportunities', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:500vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "TCSA" class = "slider_image" onTouchEnd = "save_charity('TCSA')"/>
+                 <span id = "slider_header">TCSA</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Thyroid Cancers
+                </span>
+                
+                <span id = "slider_description">
+                   The Thyroid Cancer Survivors' Association sponsors support groups that are active on the internet and in individualized communities as well as provide resources to better help physicians and patients alike come to terms with the many complexities of Thyroid Cancer. 
+
+
+                </span>
+                
+                <span onTouchEnd = "window.open('https://tcsa.memberclicks.net/index.php?option=com_mc&view=formlogin&form=84782&return=L2luZGV4LnBocD9vcHRpb249Y29tX21jJnZpZXc9bWMmbWNpZD1mb3JtXzg0NzgyP3NlcnZJZD0zMzU5Jm9wdGlvbj1jb21fbWMmdmlldz1tYyZtY2lkPWZvcm1fODQ3ODI=', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            <div class="swiper-slide-modification" style = "position:absolute;left:600vw;height:90vh;width:100vw;">
+                 <img src = "img/heartOff.png" id = "LOLF" class = "slider_image" onTouchEnd = "save_charity('LOLF')"/>
+                 <span id = "slider_header">Light of Life Foundation</span>
+                <span id = "slider_description" style = "top:15vh;">
+                Type: Thyroid Cancers
+                </span>
+                
+                <span id = "slider_description">
+                  The Light of Life Foundation is an organization that works tirelessly to improve the quality of life for Thyroid Cancer patients through the promotion of education of the general public as well as the establishment of improved research efforts within the medical community. 
+
+
+                </span>
+                
+                <span onTouchEnd = "window.open('http://www.lightoflifefoundation.org/Ways-to-Help/Donate', '_blank', 'location=yes');" id = "slider_button">Donate</span>
+            </div>
+            
+            
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+             <div class="swiper-slide">Slide 8</div>
+             <div class="swiper-slide">Slide 8</div>
+            
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+        </span>
+        </div>
+        
+       
+        <script src = "swiper.jquery.min.js"></script>
+         <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 0,
+    });
+    </script>
+        
+    </body>
+</html>

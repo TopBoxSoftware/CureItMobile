@@ -1,0 +1,2612 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+    
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+ 
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+   
+}
+
+html
+{
+    font-size:1vw;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    width:100%;
+    font-family: 'Avenir Next W01', 'Avenir Next', 'Proxima Nova', 'Myriad Pro', Helvetica, Calibri, sans-serif;
+    background-color:#38CA8B;
+    color:#EEEEEE;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+
+.box_resource
+{
+	margin: 3vw 2.5vw 0vw 0vw;
+	display:inline-block;
+	height:15vh;
+	line-height:15vh;
+	font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+	position:relative;
+	color:#EEEEEE;
+	text-align:center;
+	font-size:21px;
+	-webkit-transition: background-color .3s;
+}
+
+.box_color_one
+{
+	background-color:#065471;
+	
+}
+
+.push_left
+{
+	margin-left:6%;
+}
+
+.push_right
+{
+	margin-right:6% !important;
+	margin-left:6% !important;
+}
+
+.massive_resource_element
+{
+	width:90%;
+}
+
+.tiny_resource_element
+{
+	width: calc(90% - 65%);
+}
+
+.large_resource_element
+{
+	width:56%;
+}
+
+.small_resource_element
+{
+	width: calc(90% - 55%);
+}
+
+.medium_resource_element
+{
+	width: 46%;
+}
+
+.standard
+{
+	margin-top:0px;		
+	position:relative;
+	margin-bottom:5%;
+}
+
+.left_box
+{
+	margin-left: 5%;
+}
+
+.right_box
+{
+	margin-right:5%;
+}
+
+
+.box_color_one:active
+{
+	background-color:#127EA6
+}
+
+.box_color_two
+{
+	background-color:#0A91AB;
+}
+
+.box_color_two:active
+{
+	background-color:#17B2D1;
+}
+
+.box_color_three
+{
+	background-color:#C99734;
+}
+
+.box_color_three:active
+{
+	background-color:#E6AE3D;
+}
+
+.box_color_four
+{
+	background-color:#B08327
+}
+
+.full_resources_box
+{
+	width: calc(100vw - 12vw);	
+}
+
+.large_resources_box
+{
+	width: calc(100% - 50%);
+	margin-right:0px;
+	float:left;
+	
+}
+
+.small_resources_box
+{
+	width: calc(100% - 68%);
+	display:inline-block;
+	
+}
+
+.medium_resources_box
+{
+    width: calc(100% - 51%);
+	display:inline-block;
+}
+
+
+.first_main_color
+{
+    background-color:#422E98;
+}
+
+#first_main_color
+{
+    background-color:#422E98;
+}
+
+#second_main_color
+{
+    background-color:#008275;
+}
+
+#third_main_color
+{
+    background-color:#D85254;
+}
+
+#fourth_main_color
+{
+    background-color: #0085D8;
+}
+
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.header_size_large
+{
+    font-size:3rem;
+}
+
+.abs_center
+{
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+}
+
+.center
+{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+}
+
+#body_content
+{
+	color:#FFFFFF;
+	position: absolute;
+	top:15vh;
+    padding-left:22px;
+    padding-right:10px;
+}
+
+.box
+{
+    position:relative;
+    top:20px;
+    text-align:center;
+    color:#1F6F4C;
+}
+
+#text_enter_above
+{
+    top:32%;
+    font-size:2.5rem;
+    text-align:center;
+    color:#1F6F4C;
+}
+
+#disease_box
+{
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#2196F3;
+    color:#EEEEEE;
+    height:140px;
+    width:85vw;
+    line-height:70px;
+    text-align:center;
+    margin-top:20px;
+    -webkit-transition:background-color .20s;
+    border-radius:5px;
+}
+
+.up_the_anchor
+{
+	position:relative;
+	top:-38px;
+}
+
+#disease_box_special
+{
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#2196F3;
+    color:#EEEEEE;
+    height:140px;
+    width:85vw;
+    line-height:70px;
+    text-align:center;
+    margin-top:20px;
+    -webkit-transition:background-color .20s;
+    border-radius:5px;
+}
+
+#disease_box_special:active
+{
+    background-color:#1976D2;
+}
+
+#disease_box_two
+{
+    background-color:#38CA8B;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    color:#EEEEEE;
+    height:140px;
+    width:85vw;
+    line-height:70px;
+    text-align:center;
+    margin-top:20px;
+    -webkit-transition:background-color .20s;
+    border-radius:5px;
+}
+
+#disease_box_two:active
+{
+    background-color:#3DE89E;
+}
+
+.stories_box
+{
+    position: relative;
+    display:block;
+    width:85vw;
+    height:200px;
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#2196F3;
+    color:#EEEEEE;
+    text-align:center;   
+    border-radius:4px;
+   -webkit-transition:background-color .10s;
+}
+
+#first_stories
+{
+    background-color:#3CAD60;
+}
+
+  
+            .logo_image
+            {
+                position: relative;
+                margin-left:auto;
+                margin-right:auto;
+				top:-10px;
+                margin-bottom:-20px;
+                left:0;
+                height:60px;
+                width:60px;
+                border-radius:15px;
+				opacity:0.9;
+            }
+
+.menu_item_style
+{
+	
+	position:relative;
+	margin-left:20px !important;
+	margin-right:20px !important;
+	border-radius:5px;
+	margin-bottom: 10px !important;
+	background-color:#757575;
+	opacity:0.8;
+}
+
+#first_stories:active
+{
+    background-color:#3D9659;
+}
+
+#second_stories
+{
+    background-color:#E7A222;
+}
+
+#second_stories:active
+{
+    background-color:#CF9427;
+}
+
+#third_stories
+{
+    background-color:#9050CB;  
+}
+
+#third_stories:active
+{
+    background-color:#7F45B5;
+}
+
+#share_your_story_button
+{
+    position: relative;
+    display:block;
+    width:65vw;
+    height:60px;
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#26A69A;
+    color:#EEEEEE;
+    text-align:center;  
+    line-height:60px;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    font-size:22px;
+     -webkit-transition:background-color .12s;
+}
+
+#share_your_story_button:active
+{
+    background-color:#009688;
+}
+
+.first_story_color
+{
+    background-color:#9050CB
+}
+
+#disease_info
+{
+    position: relative;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    top:80px;
+}
+
+#stories_header
+{
+    position: relative;
+    top:20px;
+    font-size:28px;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+}
+
+#stories_info
+{
+    position: relative;
+    top:27%;
+    font-size:23px;
+    margin-left:auto;
+    margin-right:auto;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    line-height:140%;
+}
+
+#discover_content
+{
+    position:relative;
+    top:16vh;
+}
+
+#row
+{
+    display:inline-block;
+    text-align:center;
+    margin-bottom:4px;
+    width:80vw;
+}
+
+#center_row
+{
+    text-align:center;
+}
+
+.discover_box
+{
+    position: relative;
+    height:75px;
+    color:white;
+    display: inline-block;
+    line-height:75px;
+    font-size:16px;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    background-color:#484CB0;
+    -webkit-transition: background-color .25s;
+}
+
+.discover_box:hover
+{
+    background-color:#585CCD;
+}
+
+.small_first
+{
+    width:50%;
+}
+
+.small
+{
+    width:49%;
+}
+
+.medium
+{
+
+}
+
+.large
+{
+    width:100%;
+}
+
+.special_height
+{
+    height:50px;
+    line-height:50px;
+}
+
+.second_word
+{
+    
+}
+
+#story_page_header
+{
+    position:relative;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+    margin-top:20px;
+    font-size:22px;
+    color:#EEEEEE;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+}
+
+#top_card
+{
+    position: relative;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:50vh;
+    background-color:#484CB0;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+    position: relative;
+    color:white;
+    font-size:35px;
+}
+
+#card_header
+{
+    
+}
+
+#disease_box_header
+{
+    font-size:1.9em;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+}
+
+#disease_box_deaths
+{
+    position:relative;
+    font-size:1.4em;
+    font-weight:lighter;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    top:-10px;
+}
+
+.learn_more
+{
+    position:absolute;
+    height:100vh;
+    width:100vw;
+    background-color:yellow;
+    z-index:1000000;
+}
+
+#input_box
+{
+    top:40%;
+    width:85%;
+    height:50px;
+    background-color:#33B67D;
+    border: 0px solid white;
+    text-align:center;
+    color:#1F6F4C;
+    font-size:2.2rem;
+}
+
+::-webkit-input-placeholder {
+   color:#1F6F4C;
+   opacity: 0.5;
+   -webkit-transition: opacity 0.35s ease-in-out;
+   transition: opacity 0.35s ease-in-out;
+}
+
+:focus::-webkit-input-placeholder {
+    opacity: 0;
+    -webkit-transition: opacity 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.change_red
+{
+     -webkit-animation: change_red_color 1s infinite;
+     -webkit-animation-timing-function:ease;
+     -webkit-animation-iteration-count: 1;
+     -webkit-animation-fill-mode: forwards;
+}
+
+hr
+{
+    position:relative;
+    top:-15px;
+    width:80vw;
+}
+
+.change_orange
+{
+    -webkit-animation: change_orange_color 1s infinite;
+    -webkit-animation-timing-function:ease;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.fill_white
+{
+    -webkit-animation: change_white_color 2.5s infinite;
+    -webkit-animation-timing-function:ease;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes change_white_color
+{
+   
+   100% { color:#FAFAFA;
+    }
+}
+
+@-webkit-keyframes change_red_color
+{
+    100% { background-color: #EF5350;
+        }
+}
+
+.red_back
+{
+    background-color:#422E98;
+}
+
+.purple_back
+{
+    background-color: #422E98;
+}
+
+@-webkit-keyframes change_orange_color
+{
+    100% { background-color: #311B92;
+    }
+}
+
+
+#submit_button
+{
+    top:70%;
+    background-color:#1F6F4C;
+    color:#38CA8B;
+    width:85%;
+    height:80px;
+    line-height:80px;
+    text-align:center;
+    font-size:2.2rem;
+}
+
+#tiny_circle
+{
+    position:absolute;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-color:red;
+    height:0%;
+    width:0%;
+}
+
+#disease_box:active
+{
+    background-color:#1976D2;
+}
+
+.freeze_body
+{
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+}
+
+#absolute_height
+{
+    position:absolute;
+    height:500px;
+}
+
+#head
+{
+    position:relative;
+    top:20px;
+    text-align:center;
+    color:#1F6F4C;
+    font-size:3em;
+}
+
+#disease_header
+{
+    position: absolute;
+	top:5vh;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	font-size:4rem;
+}
+
+#other_header
+{
+	position: absolute;
+	top:10vh;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	font-size:2.5rem;
+	color:#FFFFFF;
+}
+
+#related_cancer
+{
+    position:relative;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+    top:5px;
+}
+
+#full_wrapper_complete_no_effect
+{
+	position: relative;
+	top:40px;
+}
+
+#whole_body
+{
+    position:absolute;
+    left:0px;
+    top:0px;
+    height:100vh;
+    width:100vw;
+    background-color:#38CA8B;
+    opacity:1;
+    z-index:20;
+}
+
+#content_holder
+{
+	position: absolute;
+	top:10vh;
+	color:#FFFFFF;
+	font-size:14.8px;
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:21px;
+    margin-right:10px;
+}
+
+.first_content
+{
+    top:300000px;
+}
+
+.gray_sub_header
+{
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+    font-size:20px;
+    font-style:italic;
+    color:#F2F2F2;
+    padding-left:10px;
+    padding-right:10px;
+    position:relative;
+    top:50px;
+	text-align:center;
+}
+
+.break
+{
+	position: relative;
+	top:100px;
+}
+
+#nav_button
+{
+    position: fixed;
+    z-index:100;
+    top:90vh;
+    left:0;
+    width:100vw;
+    height:10vh;
+    font-size:23px;
+    text-align:center;
+    line-height:10vh;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:lighter;
+    color:#EEEEEE;
+    -webkit-transition: background-color .12s;
+}
+
+#nav_button_half
+{
+    position: fixed;
+    z-index:100;
+    top:90vh;
+    left:0;
+    width:50vw;
+    height:10vh;
+    font-size:20px;
+    text-align:center;
+    line-height:10vh;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:lighter;
+    color:#EEEEEE; 
+     -webkit-transition: background-color .12s;
+}
+
+.first_nav
+{
+    background-color:#389C58;
+}
+
+.second_nav
+{
+    background-color:#D85254;
+}
+
+.third_nav
+{
+    background-color:#0091EA;
+}
+
+.first_nav:active
+{
+    background-color:#33894F;
+}
+
+.second_nav:active
+{
+    background-color:#C44A4C;
+}
+
+.third_nav:active
+{
+    background-color:#0083D4;
+}
+
+#disclaimer
+{
+    position: relative;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-style:italic;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;    
+    text-align:center;
+    font-size:15px;
+}
+
+.intro_body_content
+{
+	color:#FFFFFF;
+	position: relative;
+	top:55px;
+	
+	-webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+#preview_header
+{
+	position: relative;
+	-webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+	text-align:center;
+	color:#EEEEEE;
+}
+
+#second_header
+{
+	color:#FFFFFF;
+	position: relative;
+	-webkit-box-align:center;
+    -webkit-box-pack:center;
+	display:-webkit-box;
+	font-size:3rem;
+}
+
+#absolute
+{
+	position: absolute;
+	
+}
+
+#center_relative
+{
+    position:relative;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+}
+
+#index_button
+{
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    margin-bottom:70px;
+    height:95px;
+    font-size:23px;
+    line-height:95px;
+    color:#FFFFFF;
+    background-color:#2196F3;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:lighter;
+    -webkit-transition:background-color .20s;
+    width:255px;
+}
+
+#index_button:active
+{
+    background-color:#59ADEC;
+}
+
+#redirect_button
+{
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    margin-bottom:70px;
+    height:65px;
+    font-size:23px;
+    line-height:65px;
+    color:#FFFFFF;
+    background-color:#2196F3;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:lighter;
+    -webkit-transition:background-color .20s;
+    width:235px;
+    letter-spacing:1.2px;
+}
+
+.fade_out
+{
+    -webkit-animation: fade_out 1.1s infinite;
+    -webkit-animation-timing-function:ease;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fade_out
+{
+    0%
+    {
+        opacity:1;
+    }
+    
+    100%
+    {
+        opacity:0;
+    }
+}
+
+.donation_slide
+{
+    position: absolute;
+    height:100vh;
+    top:10vh;
+    width:100vw;
+}
+
+#slider_header
+{
+    position: relative;
+    top:10vh;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+    font-size:19px;
+    margin-left:10px;
+    margin-right:10px;
+    text-align:center;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:300;
+}
+
+#slider_description
+{
+     position: relative;
+     top:20vh;
+     -webkit-box-align:center;
+     -webkit-box-pack:center;
+     display:-webkit-box;
+     font-size:15px;
+     margin-left:20px;
+     margin-right:20px;
+     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+     font-weight:300;
+    text-align:center;
+}
+
+#slider_description_header
+{
+     position: absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+     font-weight:300;
+     text-align:center;
+}
+
+.slider_image
+{
+    position: absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    top:4vw;
+    height:37px;
+    width:37px;
+}
+
+#slider_button
+{
+   position: absolute;
+   top:67vh;
+   left:0;
+    right:0;
+   font-size:15px;
+   text-align:center;
+   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+   font-weight:300;
+   height:55px;
+   width:60vw;
+    font-size:20px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#1976D2;
+    color:#EEEEEE;
+    line-height:55px;
+    border-radius:
+    -webkit-transiton: .12s;
+}
+
+#slider_button:active
+{
+    background-color: #3071B2;
+}
+
+a.nostyle:link {
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
+}
+
+
+#chart_text
+{
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:lighter;
+}
+
+#redirect_button:active
+{
+    background-color:#59ADEC;
+}
+
+#chart_div
+{
+    position:relative;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+    top:-45px;
+}
+
+.resource
+{
+    position:relative;
+    text-align:center;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    top:-45px;
+    color:#EEEEEE;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:lighter;
+    font-size:20px;
+    width:80vw;
+    height:65px;
+    margin-top:50px;
+    line-height:65px;
+    margin-bottom:-35px;
+    background-color:#484CB0;
+    -webkit-transition: background-color 0.12s;
+}
+
+#describe_type
+{
+    margin-left:10vw;
+    margin-right:10vw;
+     -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    color:#EEEEEE;
+    margin-bottom:-24px;
+    font-size:15px;
+    position: relative;
+    top:-40px;
+}
+
+
+.two1
+{
+     background-color:#484CB0;
+}
+
+.two1:active
+{
+    background-color:#3D409A;
+}
+
+.two0
+{
+    background-color:#5BAAEC;
+}
+
+.two0:active
+{
+    background-color:#4B97D5;
+}
+
+.two3
+{
+    background-color:#009688;
+}
+
+.two3:active
+{
+    background-color:#008376;
+}
+
+#absolute_footer_donate
+{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    background-color:#59ADEC;
+    text-align:center;
+    color:#FFFFFF;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:lighter;
+    line-height:60px;
+    font-size:25px;
+    letter-spacing:1.2px;
+    top:824.9vh;
+}
+
+#redirect_button_donate
+{
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    margin-right:30px;
+    text-align:center;
+    margin-bottom:70px;
+    height:65px;
+    font-size:23px;
+    line-height:65px;
+    color:#FFFFFF;
+    background-color:#2196F3;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:lighter;
+    -webkit-transition:background-color .20s;
+    width:125px;
+    letter-spacing:1.2px;
+}
+
+#redirect_button_donate:active
+{
+    background-color:#59ADEC;
+}
+
+#redirect_button_two
+{
+    position:absolute;
+    margin-top:-8px;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    margin-bottom:70px;
+    height:65px;
+    font-size:23px;
+    line-height:65px;
+    color:#FFFFFF;
+    background-color:#FF5E52;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight:lighter;
+    -webkit-transition:background-color .20s;
+    width:235px;
+    letter-spacing:1.2px;
+}
+
+#redirect_button_two:active
+{
+    background-color:#FB7B72;
+}
+
+
+#center_element
+{
+    
+    text-align:center;
+    font-size:69px;
+}
+
+.link
+{
+    background-color:black;
+	opacity:0.6;
+	padding-left: 1.3px;
+	padding-right: 1.3px;
+}
+
+#title
+{
+	position: absolute;
+	top:86vh;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	font-size:2.5rem;
+	color:#FFFFFF;
+	text-align:center;
+}
+
+#fact
+{
+	margin-top:10px;
+	margin-bottom:-5px;
+    
+    display:inline-block;
+    margin:auto;
+	font-style:italic;
+	
+}
+
+
+ .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        
+		
+		height:8.25vh;
+        font-size: 18px;
+        
+        display:-webkit-box;
+		/* Center slide text vertically 
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+		*/
+    }
+	
+	
+#sub_header
+{
+	font-size:25px;
+	margin-bottom:5px;
+	position: relative;
+	font-style:italic;
+	-webkit-box-align:center;
+    -webkit-box-pack:center;
+	display:-webkit-box;
+}
+
+#sub_header_stories
+{
+    font-size:25px;
+	margin-bottom:5px;
+	position: relative;
+	font-style:italic;
+	-webkit-box-align:center;
+    -webkit-box-pack:center;
+	display:-webkit-box;
+    text-align:center;
+    line-height:108%;
+}
+
+#return_button
+{
+    position:relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:25px;
+    line-height:65px;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    text-align:center;
+    width:250px;
+    height:65px;
+    font-size:26px;
+    border-radius:10px;
+    background-color:#FFFFFF;
+    color:#2196F3;
+    -webkit-transition:background-color .20s;
+}
+
+#resource_link
+{
+    position: relative;
+    left:0px;
+    
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    font-size:18px;
+    width:100vw;
+    margin-top:33px;
+}
+
+#back_button
+{
+    position:absolute;
+    left:1px;
+    top:1px;
+    width:55px;
+    height:55px;
+}
+ 
+
+#center_resource_header
+{
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    font-size:26px;
+    letter-spacing: 1.15px;
+    position: absolute;
+    left:0px;
+    text-align:center;
+    width:100vw;
+    
+}
+
+#return_to_top
+{
+    position:relative;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    line-height:65px;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    text-align:center;
+    font-size:36px;
+    color:#EEEEEE;
+    letter-spacing:1.2px;
+}
+
+#return_button:active
+{
+    background-color:#EEEEEE;
+}
+
+#name_container
+{
+    position: relative;
+    display:block;
+    top:40px;
+    width:100vw;
+    height:18vh;
+    line-height:18vh;
+    color:#EEEEEE;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    font-size:32px;
+    text-align:center;
+    background-color:#33425b;
+
+}
+
+#my_badges
+{
+    margin-top:40px;
+    padding-top:25px;
+    position: relative;
+    text-align:center;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+	display:-webkit-box;
+    color:#EEEEEE;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    font-size:30px;
+    margin-bottom:10px;
+    
+}
+
+#my_badge_collection
+{
+    position: relative;
+    display:block;
+    width:100vw;
+    background-color:#484cb0;
+    height:465px;
+}
+
+#my_badge_collection_two
+{
+    position: relative;
+    display:block;
+    width:100vw;
+    background-color:#484cb0;
+    height:455px;
+}
+
+#my_badges_sub
+{
+    position: relative;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+	display:-webkit-box;
+    letter-spacing:1.3px;
+    font-size:20px;
+    color:#EEEEEE;
+}
+
+#trophy_case
+{
+    position: relative;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+	display:-webkit-box;
+}
+
+.resource_section
+{
+    position: relative;
+    width:100vw;
+    top:26px;
+    padding-bottom:100px;
+    height:auto;
+    
+}
+
+.resource_color_first
+{
+    background-color:#5BAAEC;
+}
+
+.resource_color_second
+{
+    background-color:#484CB0;
+}
+
+#resource_section_header
+{
+    position: relative;
+    padding-top:20px;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+	display:-webkit-box;
+    color:#EEEEEE;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    font-size:30px;
+}
+
+.trophy
+{
+    margin-top:20px;
+    width:75px;
+    margin-left:10px;
+    margin-right:10px;
+    height:80px;
+    margin-bottom:-20px;
+}
+
+#after_trophy_content
+{
+    position: relative;
+    top:45px;
+}
+
+#my_charities_header
+{
+    position: relative;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+	display:-webkit-box;
+    color:#EEEEEE;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    font-size:30px;
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+.special_charity_box
+{
+    font-size:30px;
+    line-height:100px;
+}
+
+.normal_charity_box
+{
+    font-size:17px;
+    padding-top:10px;
+    line-height:40px;
+}
+
+.small
+{
+    font-size:17px;
+}
+
+.smaller_under
+{
+    font-size:21px;
+}
+
+.charity_box
+{
+    margin-top:20px;
+    position: relative;
+    display:block;
+    width:85vw;
+    margin-left:auto;
+    margin-right:auto;
+    height:100px;
+    background-color:#484cb0;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight:lighter;
+    text-align:center;
+    color:#EEEEEE;
+    margin-bottom:25px;
+    -webkit-transition: background-color .12s;
+}
+
+.charity_box_header
+{
+    position: relative;
+    top:20px;
+    color:#EEEEEE;
+}
+
+.charity_box:active
+{
+    background-color:#526ed0;
+}
+
+	#trophy_button
+	{
+		position:relative;
+		display:block;
+		width:85vw;
+		height:67px;
+		line-height:67px;
+		margin-top:20px;
+		background-color:#2196F3;
+		text-align:center;
+		color:#EEEEEE;
+		font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+		font-weight:lighter;
+		font-size:23px;
+         -webkit-transition: background-color 0.12s;
+    }
+
+#trophy_button:active
+{
+    background-color:#2089E0
+}
+	
+/* Iphone 5 and 5S */
+@media only screen and (min-device-width : 320px) 
+and (max-device-width : 568px) { 
+	
+	.intro_body_content{font-size:15px;}
+	.slider_alterations
+	{
+		background:#4A148C;
+		height:100vh;
+		margin-top:-64vh;
+	}
+	
+	#preview_header
+	{
+		top:13px;
+	}
+	
+	#second_header
+	{
+		top:355px;
+	}
+	
+	.two
+	{
+		top:370px;
+	}
+    
+    .first_bad_button
+    {
+        top:647vh;
+    }
+    
+    .all_apply
+    {
+        font-size:24px;
+        position:relative;
+        top:-14px;
+    }
+    
+
+}
+
+.style
+{
+    top:-80px;
+    font-size:18px;
+}
+
+.style2
+{
+    top:-80px;
+    font-size:21px;
+    text-align:center;
+}
+
+
+.all_apply
+{
+    font-size:25px;
+    top:-15px;
+}
+
+.center_inline
+{
+    display:block;
+    text-align:center;
+}
+
+.first_bad_button
+{
+    top:564vh;
+}
+
+.second_bad_button
+{
+    top:645vh;
+}
+
+.third_bad_button
+{
+    top:730vh;
+}
+
+/* Iphone 4 and 4s */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:portrait)
+{
+   
+    #disease_header
+    {
+        font-size:3rem;
+    }
+    
+    #fact
+    {
+        font-size:15px;
+    }
+    
+    #index_button
+    {
+        font-size:20px;
+        height:70px;
+        line-height:70px;
+    }
+    
+    #chart_div
+    {
+        top:-65px;
+    }
+    
+    .style
+    {
+        top:-120px;
+    }
+    
+    
+   .all_apply
+   {
+       position:relative;
+       top:-14px;
+   }
+    
+    #content_holder
+    {
+        font-size:13px;
+    }
+    
+    .first_bad_button
+    {
+        top:563vh;
+    }
+    
+    .second_bad_button
+    {
+        top:645.6vh;
+    }
+    
+    .third_bad_button
+    {
+        top:727.8vh;
+    }
+    
+    #slider_description
+    {
+        font-size:15px;
+        line-height:130%;
+    }
+    
+    #slider_header
+    {
+        font-size:19px;
+    }
+    
+    #slider_button
+    {
+        width:65vw;
+        height:55px;
+        line-height:55px;
+        font-size:20px;
+        margin-top:-5px;
+    }
+    
+    #nav_button
+    {
+        font-size:24px;
+    }
+    
+    #nav_button_half
+    {
+        font-size:20px;
+    }
+    
+    .slider_image
+    {
+        height:31px;
+        width:31px;
+    }
+    
+
+}
+
+/* Iphone 6 */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : portrait) {
+    
+   .header_size_large
+   {
+       font-size:4rem;
+   }
+   
+   .menu_item_style
+{
+	margin-bottom: 15px !important;
+	font-size:19px;
+	
+}
+
+.box_resource
+{
+	font-size:23px;
+}
+
+.logo_image
+{
+	height:70px;
+	width:70px;
+}
+   
+	#center_resource_header
+	{
+		font-size:25x;
+	}
+   
+	.resource
+	{
+		height:70px;
+		line-height:70px;
+		font-size:21px;
+	}
+	
+	#resource_link
+	{
+		font-size:20px;
+	}
+   
+	#describe_type
+	{
+		font-size:18px;
+	   
+	}
+   
+   #trophy_button
+   {
+		font-size:26px;
+	   
+   }
+   
+   #resource_section_header
+   {
+	   font-size:35px;
+   }
+    
+    .small
+    {
+        font-size:19px;   
+    }
+    
+    #my_badge_collection
+    {
+        height:500px;
+    }
+   
+    .trophy
+    {
+        width:85px;
+        height:90px;
+    }
+    
+    .normal_charity_box
+    {
+        font-size:22px;
+    }
+    
+    
+    #name_container
+    {
+        font-size:37px;
+    }
+    
+   #content_holder
+   {
+       font-size:18px;
+       line-height:140%;
+   }
+   
+   #text_enter_above
+   {
+       font-size:3rem;
+   }
+   
+   .all_apply
+   {
+       font-size:26px;
+   }
+   
+   #index_button
+   {
+       width:300px;
+       font-size:26px;
+   }
+   
+   #submit_button
+   {
+       font-size:3rem;
+   }
+   
+   #body_content
+   {
+       font-size:17px;
+       line-height:160%;
+   }
+    
+    #body_content_two
+        {
+          color: red !important; 
+    }
+    
+
+   
+   #return_button
+   {
+       width:300px;
+       font-size:28px;
+   }
+    
+   #redirect_button_two
+   {
+       margin-top:0px;
+   }
+    
+    #slider_description
+    {
+        font-size:19px;
+        line-height:130%;
+    }
+    
+    #slider_header
+    {
+        font-size:22px;
+    }
+    
+    #slider_button
+    {
+        width:70vw;
+        height:65px;
+        line-height:65px;
+        font-size:25px;
+    }
+    
+    #nav_button
+    {
+        font-size:28px;
+    }
+    
+    #nav_button_half
+    {
+        font-size:23px;
+    }
+    
+    .slider_image
+    {
+        height:45px;
+        width:45px;
+    }
+    
+    #stories_header
+    {
+        font-size:32px;
+    }
+    
+    #stories_info
+    {
+        font-size:26px;
+    }
+    
+    #share_your_story_button
+    {
+        width:70vw;
+        height:75px;
+        line-height:75px;
+        font-size:27px;
+    }
+    
+    #story_page_header
+    {
+        font-size:27px;
+    }
+    
+    #disclaimer
+    {
+        font-size:21px;
+    }
+    
+    #sub_header_stories
+    {
+        font-size:28px;
+    }
+    
+	.style
+	{
+		font-size:21px;
+	}
+}
+
+/* Iphone 6+ */
+
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : portrait)
+{
+	
+	  #trophy_button
+   {
+		font-size:26px;
+	   
+   }
+   
+   .medium_resource_element
+{
+	width: 46.5%;
+}
+
+.box_resource
+{
+	font-size:25px;
+}
+
+	.large_resource_element
+{
+	width:56.5%;
+}
+   
+   .logo_image
+{
+	height:73px;
+	width:73px;
+}
+   
+   .menu_item_style
+{
+	margin-bottom: 25px !important;
+	font-size:19px;s
+	
+}
+   
+   #resource_link
+	{
+		font-size:21px;
+	}
+   
+   .resource
+	{
+		height:75px;
+		line-height:75px;
+		font-size:22px;
+	}
+   
+   #describe_type
+	{
+		font-size:18px;
+	   
+	}
+    
+    #index_button
+    {
+        font-size:28px;
+        height:110px;
+        line-height:110px;
+    }
+    
+    .small
+    {
+        font-size:22px;   
+    }
+    
+    #my_badge_collection
+    {
+        height:545px;
+    }
+   
+    .trophy
+    {
+        width:95px;
+        height:100px;
+        margin-left:13px;
+        margin-right:13px;
+    }
+    
+    .normal_charity_box
+    {
+        font-size:23px;
+    }
+    
+    #slider_description
+    {
+        font-size:21px;
+        line-height:130%;
+    }
+    
+    #slider_header
+    {
+        font-size:24px;
+    }
+    
+    #slider_button
+    {
+        width:70vw;
+        height:75px;
+        line-height:75px;
+        font-size:25px;
+    }
+    
+    #nav_button
+    {
+        font-size:28px;
+    }
+    
+    #nav_button_half
+    {
+        font-size:24px;
+    }
+    
+    .all_apply
+    {
+        font-size:26px;
+    }
+    
+    #content_holder
+    {
+        font-size:19.8px;
+        line-height:145%;
+    }
+    
+    .all_apply
+    {
+        font-size:30px;
+    }
+    
+    .first_mod
+    {
+        font-size:22.7px;
+    }
+    
+    .style
+    {
+        font-size:28px;
+    }
+    
+    .slider_image
+    {
+        height:50px;
+        width:50px;
+    }
+    
+    #stories_header
+    {
+        font-size:34px;
+    }
+    
+    #stories_info
+    {
+        font-size:28px;
+    }
+    
+    #share_your_story_button
+    {
+        width:70vw;
+        height:75px;
+        line-height:75px;
+        font-size:30px;
+    }
+    
+    #story_page_header
+    {
+        font-size:28px;
+    }
+    
+    #disclaimer
+    {
+        font-size:22px;
+    }
+    
+    #sub_header_stories
+    {
+        font-size:29px;
+    }
+
+}
+
+/* Ipad */
+@media only screen
+and (min-device-width : 768px)
+ {
+     
+     .small
+    {
+        font-size:28px;   
+    }
+	
+ #head
+ {
+	 top:30px;
+	 font-size:50px;
+ }
+	
+	.box_resource
+{
+	font-size:40px;
+}
+	
+	.large_resource_element
+{
+	width:57%;
+}
+	
+	.medium_resource_element
+{
+	width: 47%;
+}
+	.logo_image
+	{
+		margin-top:10px;
+		height:90px;
+		width:90px;
+	}
+	
+	.menu_item_style
+{
+	height: 80px !important;
+	font-size:27px;
+	line-height: 52px;
+	margin-bottom:30px !important;
+	
+}
+	
+	#back_button
+	{
+		height:85px;
+		width:85px;
+	}
+	
+	  #trophy_button
+   {
+		font-size:26px;
+	   
+   }
+   
+	#center_resource_header
+	{
+		font-size:38px;
+	}
+   
+   #resource_link
+	{
+		font-size:30px;
+	}
+   
+	#describe_type
+	{
+		font-size:23px;
+		line-height:120%;
+	}
+   
+   .resource
+	{
+		height:85px;
+		line-height:85px;
+		font-size:26px;
+	}
+     
+     #name_container
+    {
+        font-size:50px;
+    }
+     
+     #my_charities_header
+     {
+        font-size:45px;
+        margin-top:45px;
+     }
+    
+    #my_badge_collection
+    {
+        height:730px;
+    }
+     
+     #my_badges
+     {
+        font-size:40px;
+        margin-bottom:20px;
+     }
+        
+    #my_badges_sub
+    {
+        font-size:30px;
+    }
+   
+    .trophy
+    {
+        width:125px;
+        height:130px;
+        margin-left:40px;
+        margin-right:50px;
+        margin-bottom:-10px;
+    }
+    
+    .normal_charity_box
+    {
+        font-size:26px;
+    }
+     
+    
+     
+     #title
+     {
+         font-size:5rem;
+     }
+     
+     .all_apply
+     {
+         font-size:40px;
+     }
+     
+     .style
+     {
+		 top:20px;
+         font-size:35px;
+     }
+     
+     #content_holder
+     {
+         font-size:29px;
+         line-height:160%;
+     }
+
+    .header_size_large
+    {
+        font-size:5rem;
+    }
+
+    #text_enter_above
+    {
+        font-size:4rem;
+    }
+    
+    #disease_header
+    {
+        font-size:5.5rem;
+    }
+    
+    #fact
+    {
+        
+        line-height:150%;
+        margin-left:10px;
+        margin-right:10px;
+        margin-bottom:17px;
+    }
+    
+    .last_mod
+    {
+        font-size:25px;
+    }
+    
+    #redirect_button
+    {
+       
+        width:400px;
+        height:80px;
+        line-height:80px;
+        font-size:30px;
+    }
+    
+    #redirect_button_two
+    {
+        width:400px;
+        height:80px;
+        line-height:80px;
+        font-size:30px;
+    }
+    
+    #submit_button
+    {
+        font-size:3rem;
+    }
+    
+    #sub_header
+    {
+        font-size:45px;
+    }
+    
+    #disease_box
+    {
+        width:45vw;
+        display:inline-block;
+        margin-right:20px;
+        left:10px;
+    }
+    
+    #other_header
+    {
+        font-size:6rem;
+    }
+    
+    .movement
+    {
+        color:black;
+    }
+    
+    #disease_box_center
+    {
+       text-align:center;
+    }
+    
+    #body_content
+    {
+        font-size:29px;
+        line-height:180%;
+    }
+    
+    #return_button
+    {
+        width:550px;
+        font-size:28px;
+        height:100px;
+        line-height:100px;
+        font-size:48px;
+    }
+    
+    #index_button
+    {
+        width:75vw;
+        height:132px;
+        line-height:132px;
+        font-size:40px;
+    }
+     
+      #slider_description
+    {
+        font-size:32px;
+        line-height:143%;
+    }
+    
+    #slider_header
+    {
+        font-size:44px;
+    }
+    
+    #slider_button
+    {
+        width:70vw;
+        height:100px;
+        line-height:100px;
+        font-size:38px;
+    }
+    
+    #nav_button
+    {
+        font-size:38px;
+    }
+    
+    #nav_button_half
+    {
+        font-size:35px;
+    }
+    
+    .slider_image
+    {
+        top:21px;
+        height:65px;
+        width:65px;
+    }
+     
+       #stories_header
+    {
+        font-size:36px;
+    }
+    
+    #stories_info
+    {
+        font-size:30px;
+    }
+    
+    #share_your_story_button
+    {
+        width:70vw;
+        height:95px;
+        line-height:95px;
+        font-size:36px;
+    }
+    
+    #story_page_header
+    {
+        font-size:30px;
+    }
+     
+    #disclaimer
+    {
+        font-size:30px;
+    }
+    
+    #sub_header_stories
+    {
+        font-size:42px;
+    }
+
+}
+

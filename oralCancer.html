@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+         <link href = "swiper.min.css" />
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script src="sweetalert-dev.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+       
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                            
+                            ['Females', 90],
+['Males', 5],
+['wow', 5]
+]);
+
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1', '#4CAF50']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+        <script type = "text/javascript">
+            jQuery(document).ready(function($){
+                incrementDisease("oral");
+            });
+        </script>
+		
+    </head>
+	
+    <body onLoad = "init_disease_page()" id = "the_body" class = "animated fadeIn first_main_color">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Oral Cancers</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+            
+		<span id = "full_wrapper_complete_no_effect">
+	        <span id = "full_wrapper">
+	       <!--     <div class="box header_size_large" id = "head">oral Cancer</div>
+	              <br /><br />
+                <span class = "gray_sub_header">Over 28 people are diagnosed with oral Cancer every day in the UK alone.</span>
+	           -->
+          
+			  <div class="swiper-container">
+                  
+        <div class="swiper-wrapper">
+			<div id = "first_preview_pane"></div>
+			
+            <span class="swiper-slide">
+			<div id = "disease_header">Oral Cancers</div>
+			
+			<div id = "content_holder" style = "text-align:center;">
+                
+                
+			<span id = "fact">More people die from Oral Cancer each year than from gun murders</span><br />
+			
+            <div id = "index_button" style = "top:12vh;" onClick = "swiper.slideTo(4, 1000);" onTouchEnd = "run()">Types of Oral Cancer</div>
+            <div id = "index_button" style = "top:31vh;" onClick = "swiper.slideTo(6, 1000);" onTouchEnd = "run()">Medical Advancements</div>
+            <div id = "index_button" style = "top:50vh;" onClick = "swiper.slideTo(8, 1000);" onTouchEnd = "run()">How to Help</div>
+            
+			</div>
+			
+			
+			</span>
+            <span class="swiper-slide" id = "second_main_color">
+				<span id = "title">Introduction (1/3)</span>
+				<div id = "content_holder" style = "top:95vh;">
+                    Oral Cancer is a disease in which a group of oral cells begins to divide uncontrollably, resulting in a tumorous mass. The term "Oral Cancer" can refer to cancers of the lips, cheeks, mouth, tounge, throat, as well as related reigons. 
+					<br />
+					<br />
+					There are a  <span class = "link" onTouchEnd = "window.open('http://www.cancercenter.com/oral-cancer/types/l', '_blank', 'location=yes');">few different types of Oral Cancers</span>, and advanced knowledge of each of these is essential in terms of gaining an appreciation for the situation that Oral Cancer victims struggle with everyday. 
+					<br />
+					<br />
+					The three that we will be analyzing later in this page are Squamous Cell Carcinomas and Verrucous Carcinomas.
+
+				</div>
+				
+			</span>
+            <div class="swiper-slide" id = "third_main_color">
+                <span id = "title" style = "top:168vh">Introduction (2/3)</span>
+                <div id = "content_holder" style = "top:179vh;">
+                   Oral Cancers are sometimes difficult to detect due to the relatively unfrightening way in which the symptoms present themselves. 
+				   <br />
+				   <br />
+				   While the symptoms are often quite visual, with bleeding sores and speckled white patches in the mouth, many fail to interpret them as being as serious as they actually are. 
+				   <br />
+				   <br />
+				   This harm, at least in part, is provided by a lack of understanding for the issue of Oral Cancers. In fact, <span class = "link" onTouchEnd = "window.open('http://www.cancercenter.com/oral-cancer/types/l', '_blank', 'location=yes');">over 10 percent</span> of the United States population is completely unaware that of the threat of Oral Cancers. 
+
+                    </div>
+                
+                
+                </div>
+            <div class="swiper-slide" id = "fourth_main_color">
+                <span id = "title" style = "top:251vh;">Introduction (3/3)</span>
+                <div id = "content_holder" style = "top:260vh;">
+                    Below is a chart that details the composition of the various forms of Oral Cancers, something which allows us to isolate the harms of each individual varient and their resulting impacts on society. 
+
+                    <div id="chart_div" style = "position:relative;"></div>
+                    
+                    
+                    <span id = "center_relative" class = "style">
+                        <span id = "chart_text" style = "color:#0D47A1;margin-right:28px;">VC</span>
+                        <span id = "chart_text" style = "color:#F7464A;margin-right:28px;">SCC</span>
+						<span id = "chart_text" style = "color:#4CAF50">Others</span>
+                    </span>
+                    
+                    
+                </div>
+                
+                
+                
+            </div>
+            <div class="swiper-slide" id = "first_main_color">
+                
+                <span id = "title" style = "top:334vh;">Types of Cancer (1/2)</span>
+                <div id = "content_holder" style = "top:344vh;">
+                    
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Squamous Cell Carcinomas</span><br />
+                    </span>
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                 Your throat and parts of your mouth are covered with many flat squamous cells. Contracting Squamous Cell Carcinoma means that some of these cells have become abnormal and are now actively fighting against the body.
+				<br />
+				<br />
+				 Squamous Cell Carcinomas are a relatively pervasive problem, with <span class = "link" onTouchEnd = "window.open('http://www.merckmanuals.com/professional/ear-nose-and-throat-disorders/tumors-of-the-head-and-neck/oral-squamous-cell-carcinoma', '_blank', 'location=yes');">over 30,000 people</span> being effected by it each year in the United States alone. 
+<br />
+                    <br />
+                    
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button" style = "top:398vh;" onClick = 'learn_more("oral_first")'>Learn More<span>
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+            
+            <span id = "title" style = "top:416vh;">Types of Cancer (2/2)</span>
+            <div id = "content_holder" style = "top:426vh;">
+                <span class = "center_inline">
+                    <span id = "fact" class = "first_mod all_apply">Verrucous Carcinomas</span><br />
+                </span>
+                
+                <span style = "position:relative;top:-15px;">
+                  Verrucous Carcinomas are a relatively rare varient of Squamous Cell Carcinomas, accounting for <span class = "link" onTouchEnd = "window.open('http://www.cancercenter.com/oral-cancer/types/l', '_blank', 'location=yes');">around 5 percent</span> of all oral cavity cancers. It is typically very slow growing, which means that it rarely spreads to other parts of the body. 
+				  <br />
+				  <br />
+				  However, it can become deeply infused with the oral cavity, something which sometimes results in the degredation of the jaw bone or similar features. 
+
+                    <br />
+                    <br />
+                    
+                </span>
+                
+            </div>
+            
+            <span id = "redirect_button_two" style = "top:481vh;" onClick = "learn_more('oral_second')">Learn More<span>
+
+
+            </div>
+            <div class="swiper-slide" id = "third_main_color">
+                
+                
+                <span id = "title" style = "top:499vh;">Medical Advancements (1/2)</span>
+                <div id = "content_holder" style = "top:509vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Chemotherapy Improvements</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                       Chemotherapy has always served as a valuable tool for doctors and patients alike to combat Oral Cancers.
+						<br />
+						<br />
+					  While the side effects of this form of treatment have made some patients apprehensive to attempting it, researchers are hard as work to make the practice more comfortable and effective for patients everywhere.
+					  <br />
+					  <br />
+                    </span>
+                   
+                        </div>
+             <span id = "redirect_button" class = "first_bad_button" onClick = "learn_more('oral_third')">Learn More<span>
+            
+            </div>
+            
+            <div class="swiper-slide" id = "fourth_main_color">
+                
+                <span id = "title" style = "top:582vh;">Medical Advancements (2/2)</span>
+                <div id = "content_holder" style = "top:592vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">Increased Lifestyle Advancements</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                       Recent discoveries have done much to better our understanding regarding the actual causes of Oral Cancers, something that has given people everywhere the opportunity to protect themselves from this terrible disease. 
+					   <br />
+					   <br />
+					   This means that it is now possible for everyone to take significant steps towards ensuring a healthier, safer life free from the burden of cancer. 
+
+                    </span>
+                    
+                </div>
+                <span id = "redirect_button_two" class = "second_bad_button" onClick = "learn_more('oral_fourth')">Learn More<span>
+                    
+                
+                
+                
+                </div>
+            <div class="swiper-slide" class = "first_main_color">
+                
+                
+                
+                <span id = "title" style = "top:664vh;">How to Help (1/2)</span>
+                <div id = "content_holder" style = "top:675vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">The Oral Cancer Foundation</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                      The <span class = "link" onTouchEnd = "window.open('http://www.oralcancer.org/', '_blank', 'location=yes');">Oral Cancer Foundation</span> has long since been a valuable participant in the battle against Oral Cancers. They have made it their mission to save lives through the promotion of innovative new research and an increased awareness as to the causes of Oral Cancers. 
+					<br />
+					<br />
+					The Oral Cancer fondation has also been responsible for the organization of many nationwide events that have increased public awareness.
+
+                    </span>
+                    
+                </div>
+                
+               
+                    <span onClick = "window.open('https://donate.oralcancer.org/index.cfm?fuseaction=donate.general', '_blank', 'location=yes');"> <span id = "redirect_button" class = "third_bad_button">Donate<span></span>
+
+                
+            
+            
+            
+            </div>
+            <div class="swiper-slide" id = "second_main_color">
+                <span id = "title" style = "top:747vh;">How to Help (2/2)</span>
+                <div id = "content_holder" style = "top:758vh;">
+                    <span class = "center_inline">
+                        <span id = "fact" class = "first_mod all_apply">The Mouth Cancer Foundation</span><br />
+                    </span>
+                    <span style = "position:relative;top:-15px;">
+                       Established over a decade ago, The <span class = "link" onTouchEnd = "window.open('http://www.mouthcancerfoundation.org/', '_blank', 'location=yes');">Mouth Cancer Foundation</span> has dedicated itself to supporting people who suffer from mouth, throat, and other related cancers. 
+					   <br />
+					   <br />
+					   They provide valuable information for patients and professionals alike, helping both parties deal with their situation in a healthy, efficient way free from ignorance. 
+
+                    </span>
+                    
+                </div>
+                
+                
+                <span onClick = "window.open('http://www.mouthcancerfoundation.org/get-involved/donate-mouth-cancer-foundation', '_blank', 'location=yes');"> <span id = "redirect_button_two" style = "top:813vh;">Donate<span></span>
+                    
+                    
+                    
+                    
+
+            </div>
+            <span id = "absolute_footer_donate" class = "last_mod" onTouchEnd = "leave_diseases();">Tap to return to Diseases</span>
+        </div>
+        
+        
+        <!-- Add Pagination -->
+       
+    </div>   
+			   
+			   
+			   
+			   
+           </span>
+	      	
+	        <br />
+	        <br />
+	
+			</span>
+	        </div>
+			</div>
+            
+                
+            </div>
+         <script src = "swiper.jquery.min.js"></script>
+        <script>
+              var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical'
+    });
+            </script>
+    </body>
+</html>

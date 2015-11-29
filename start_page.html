@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 16px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			
+			
+			
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							alert( "Thank you for clicking, but that's a demo link." );
+							return false;
+						}
+					);
+					
+			});
+			
+			
+		</script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_diseases('diseases')" id = "the_body">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Diseases</span>
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		
+    <!-- Maybe make the color fade from green to a light red -->
+        <div id = "full_wrapper_complete">
+		<span id = "full_wrapper_complete_no_effect">
+	        <span id = "full_wrapper">
+	            <div class="box header_size_large" id = "head">Diseases</div>
+	              <br />
+	              
+	            
+	        </span>
+	        
+            <div id = "disease_box_center">
+                
+	       <div id = "disease_box" class = "movement" onClick = "open_bladder_cancer()" onTouchEnd = "transition_work()">
+	           
+	           <span id = "disease_box_header">Bladder Cancers</span>
+	           <br />
+	           <span id = "disease_box_deaths">Deaths per Year: 15,580</span>
+	           
+	        </div>
+	
+	        <div id = "disease_box" onClick = "open_blood_cancer()">
+	    
+	            <span id = "disease_box_header">Blood Cancers</span>
+	                <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 55,350</span>
+	    
+	        </div>
+            
+            
+	        
+	        <div id = "disease_box" onClick = "open_bone_cancer()">
+	            
+	            <span id = "disease_box_header">Bone Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 1,490</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_brain_cancer()">
+	            
+	            <span id = "disease_box_header">Brain Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 14,320</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_breast_cancer()">
+	            
+	            <span id = "disease_box_header">Breast Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: ~40,000</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_colo_cancer()">
+	            
+	            <span id = "disease_box_header">Colorectal Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 50,310</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_endo_cancer()">
+	            
+	            <span id = "disease_box_header" >Endometrial Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 10,170</span>
+	            
+	        </div>
+	        
+	        
+	        <div id = "disease_box" onClick = "open_eye_cancer()">
+	            
+	            <span id = "disease_box_header">Eye Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 270</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_liver_cancer()">
+	            
+	            <span id = "disease_box_header">Liver Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: ~23,000</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_lung_cancer()">
+	            
+	            <span id = "disease_box_header">Lung Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 159,260</span>
+	            
+	        </div>
+			
+			   <div id = "disease_box" onClick = "open_lymphatic_cancer()">
+	            
+	            <span id = "disease_box_header">Lymphatic Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: ~20,940</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_oral_cancer()">
+	            
+	            <span id = "disease_box_header">Oral Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 13,500</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_ovarian_cancer()">
+	            
+	            <span id = "disease_box_header">Ovarian Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 14,270</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_pancreatic_cancer()">
+	            
+	            <span id = "disease_box_header">Pancreatic Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 40,560</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box" onClick = "open_skin_cancer()">
+	            
+	            <span id = "disease_box_header">Skin Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: ~16,500</span>
+	            
+	        </div>
+	      
+			<div id = "disease_box" onClick = "open_testicular_cancer()">
+	            
+	            <span id = "disease_box_header">Testicular Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: ~380</span>
+	            
+	        </div>
+			
+	        <div id = "disease_box" onClick = "open_thyroid_cancer()">
+	            
+	            <span id = "disease_box_header">Thyroid Cancers</span>
+	            <br />
+	            <span id = "disease_box_deaths">Deaths per Year: 1,890</span>
+	            
+	        </div>
+	        
+	        <div id = "disease_box_two" style = "margin-bottom:30px;" onClick = "window.location = 'donationCards.html'" onTouchEnd = "run()">
+	            
+	            <span id = "disease_box_header">Donate</span>
+	            <br />
+	            <span id = "disease_box_deaths">Save a Life</span>
+	            
+	        </div>
+	
+	        <br />
+	        <br />
+	
+			</span>
+	        </div>
+			</div>
+        </div>
+        
+       
+
+    </body>
+</html>

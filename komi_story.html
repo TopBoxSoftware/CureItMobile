@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/animate.css-master/animate.min.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/normalize.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css2/skeleton.css" />
+        <link rel = "stylesheet" type = "text/css" href = "sweetalert.css" />
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu.css" />
+		<link type="text/css" rel="stylesheet" href="css2/dropmenu2.css" />
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			.mm-menu
+			{
+				background: rgba( 0, 0, 0, 0.6 );
+				box-shadow: none !important;
+				text-align: center;
+				color: #fff;
+			}
+			.mm-menu .mm-listview
+			{
+				font-size: 18px;
+			}
+			.mm-menu .mm-listview li:after
+			{
+				content: none !important;
+			}
+			.mm-menu .mm-listview li a
+			{
+				padding: 15px 0;
+			}
+			.mm-menu li a:hover
+			{
+				background: rgba( 255, 255, 255, 0.1 );
+			}
+			.logo
+			{
+				border: 1px solid #fff;
+				line-height: 40px;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				margin: 35px 0 20px 0;
+			}
+		</style>
+		<!-- DROP DOWN MENU END -->
+		
+        <title>Welcome</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script rel = "text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/dropmenu.js"></script>
+        <script rel = "text/javascript" src = "js/index.js"></script>
+        <script rel = "text/javascript" src = "sweetalert.min.js"></script>
+        <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script src="js/googleCharts.js"></script>
+        <script src = "cordova.js"></script>
+        <link href = "swiper.min.css" />
+
+        <script type = "text/javascript">
+            jQuery(document).ready(function($){
+                incrementStory("komi");
+            });
+        </script>
+		
+		<!-- DROP DOWN MENU BEGIN -->
+		<script type="text/javascript">
+			$(function() {
+				$("#menu")
+					.mmenu({
+		navbar 		: {
+			title 		: false
+		},
+		offCanvas	: {
+			position	: "top",
+			zposition	: "front"
+		}
+					}).on( 'click',
+						'a[href^="#/"]',
+						function() {
+							
+							return false;
+						}
+					);
+			});
+            
+            
+		</script>
+        
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+            
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+                
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                            
+                              ['Females', 24],
+                              ['Males', 76]
+                              ]);
+ 
+ 
+ 
+                              // Set chart options
+                              var options = {
+                                  'tooltip' : {
+                                      trigger: 'none'
+                                  },
+                                  backgroundColor:'transparent',
+                                  legend: {position: 'none'},
+                                  'width':300,
+                                  'height':300,
+                                  colors: ['#F7464A', '#0D47A1']}
+                                ;
+                              
+                              // Instantiate and draw our chart, passing in some options.
+                              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                              chart.draw(data, options);
+            }
+                                                        
+        
+        
+        </script>
+        <!-- DROP DOWN MENU END -->
+		
+    </head>
+	
+    <body onLoad = "init_other_page()" class = "animated fadeIn" id = "the_body" style = "background-color:#009688">
+        <span id = "whole_body"></span>
+		<!-- DROP DOWN MENU BEGIN -->
+		<div id="page">
+			<div id = "fastclick" class="header" style = "background-color:#3F51B5;opacity:.85;position:fixed;z-index:10;">
+                <span id = "index_buttonn">Komi's Story</span>
+                
+				<a href="#menu"></a>
+
+			</div>
+		</div>
+		<nav id="menu" class = "wow">
+			<div>
+				<img class="logo_image" src = "app_icon.png"/>
+				 
+				<ul>
+				<li class = "menu_item_style" style = "margin-top:15px;'"><a href="my_profile.html">My Profile</a></li>
+					<li class = "menu_item_style"><a href="opening_hub.html">Discover</a></li>
+					<li class = "menu_item_style"><a onClick = "window.location = 'start_page.html'">Diseases</a>
+					</li>
+                    
+                    <li class = "menu_item_style"><a href="stories_page.html">Stories</a></li>
+					<li class = "menu_item_style"><a href="resources.html">Resources</a></li>
+					<li class = "menu_item_style"><a href="donationCards.html">Donate</a></li>
+                   
+				</ul>
+			</div>
+		</nav>
+		<!-- DROP DOWN MENU END -->
+		<div id = "other_header">Komi Amegblenke</div>
+    
+		
+        
+		<div id = "body_content">
+		 <br />
+            <span id = "disclaimer">Some of the names and places featured in this interview may have been changed to protect the identities of those involved.</span>
+            <br />
+			<span id = "sub_header_stories">When and how did you first find out you had cancer?</span>
+            <hr />
+            <span style = "position:relative;top:-30px;">
+		I was in Texas trying to start a life for myself at the young age of 19. I was attending community college, working full time, and just making new friends. Within the first 4 months everything was cool, but then one day I started experiencing neck pain.
+                <br />
+                <br />
+                At first I didn't think much of it. I thought it was mainly from working out. I was a bodybuilder, in a sense, during this time so I thought I had strained my neck. But then one Friday night after work I couldn't sleep because of the pain so I rushed to the ER the next day and got a CT scan done. 
+                <br />
+                <br />
+                They told me I had a cyst or some nodule growth in my neck. From the description I assumed it was branchial cleft cyst. They told me to see a ent doctor, but I couldn't in Texas since my parents insurance only covered er visits while out of the network (Kaiser Permanente). After my semester of school finished I rushed home.
+                <br />
+                <br />
+                Lucky I did too because my roommate and I almost talked about how it was better to stay cause it was nothing. The Lord guided me in the right direction though and I left a bit earlier to Oregon — had to drive since I bought a car. 
+                <br />
+                <br />
+                Once I got back I saw my primary and she read my ct scan and notes from the Texas er. She told me the best thing to do is to see a ent doctor and I was referred. My ent right away noticed it was something serious when she told me there were more nodules on my right side of my neck — originally my left was swollen. 
+                <br />
+                <br />
+                She suspected thyroid cancer or lymphoma. This led to a needle aspiration which confirmed cancer. Had a lymph node removed and was contacted by an oncologist. She told me I had lymphoma and ordered some blood test. The blood test showed an elevated white blood and neutrophil count so I had a bone marrow done later. The marrow confirmed I had leukemia as well.
+                <br />
+                <br />
+                My diagnosis is considered a high grade lymphoma called pre cursor t cell lymphoblastic lymphoma leukemia. I've had the blessing of finding it early imo and things have gone well so far. I began my treatment a few days after my 20th birthday in January and I'm still undergoing chemo at the moment.
+                <br />
+                <br />
+                I'm currently in remission and hope it stays this way. My regimen is three years. The toughest part is trying to figure out what to do while you're sick. I've been the least active since this all started and some days it gets boring, but you have to look at the light at the end of the tunnel. 
+                <br />
+                <br />
+                Hopefully I can begin and finish college and other stuff. Looking into online courses once I make it to maintenance. 
+
+             </span>
+            
+            	<span id = "sub_header_stories">How have your friends and family reacted to your diagnosis?</span>
+            <hr />
+            <span style = "position:relative;top:-30px;">
+	It's been all over the board. I would say everyone has taken it hard, but people deal with it differently. My family has been supportive since day one. My father takes me to my chemo, my mother cooks for me and a whole lot of other things.
+                <br />
+                <br />
+                My siblings especially my two biological sisters have been here helping me when I need help and encourage me when I feel down or burst into tears, which I think I've done the most within the last 8 months vs 20 years of my life. 
+                <br />
+                <br />
+                My friends are interesting. My Texas friends who I don't get to see anymore because of my move back home have been there for me by contacting me and seeing how I'm doing. My, what I thought was a close friend in my home state, has flaked from my life really. 
+                <br />
+                <br />
+                He only contacts me about idiotic things such as partying or smoking weed. He rarely contacts me now, but it's okay. A female I knew since kindergarten just stopped texting me and I'm fine with it. 
+                <br />
+                <br />
+                Other friends have stepped up though. My other friends have been here and it means a lot. Cancer allows you to see who's really there for you. It's tough, but you have to realize that people aren't all able to handle it the same and don't know what to say or do. 
+
+             </span>
+            
+            	<span id = "sub_header_stories">Do you think that the public awareness is where it needs to be for cancers in general?</span>
+            <hr />
+            <span style = "position:relative;top:-30px;">
+	I do not believe that cancer awareness is where it needs to be. Before I got cancer, I never thought about it. Now that I'm going through the process I wish I was more aware of what people went through. The physical changes people go through is tough. 
+                <br />
+                <br />
+                I'm not losing hair, but my face has become chipmunk like and I've lost a confidence. People don't know how to react when they see this change. They just look and instead of asking what's going on. And whats the worse is when your nuetropenic and have to wear a mask. 
+                <br />
+                <br />
+                The mask aspect of it is the worse. I'm wearing the mask to practice myself, but it seems like to some that I'm going to harm them. I wish people would be more informed on this whole situation. It's going to take a while for us to get to that point though.
+
+             </span>
+
+            <span id = "sub_header_stories">How about specific types of cancer?</span>
+            <hr />
+            <span style = "position:relative;top:-30px;">
+	I think breast cancer/leukemia are two forms of cancer people are aware of, but truthfully I don't believe people know what people endure. Especially for young adults. 
+                <br />
+                <br />
+                I've had to stop school and I'm lost on what to do during this process. I've looked at online schools to try and continue my education, but it's tough.             
+        
+             </span>
+            
+        
+                 
+                 
+    
+           </span>
+             <br />
+        
+            <div id = "return_button" onTouchEnd = "lymphaticCancer.html;">Lymphatic Cancers</div> 
+            <div id = "return_button" onTouchEnd = "go_back();">Go Back</div>
+               
+            <br />
+            <br />
+		</div>
+		<!-- Maybe make the color fade from green to a light red -->
+          </body>
+</html>
