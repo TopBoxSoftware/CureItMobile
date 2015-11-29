@@ -3500,7 +3500,7 @@ function firstTime(){
 	j++;
 
 	if (j != 1){
-		window.open("opening_hub.html");
+		window.open("opening_hub.html","_self");
 	}
 
 	localStorage.setItem("virgin", j);
