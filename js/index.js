@@ -286,13 +286,26 @@ function init_bladder()
 
 function eval_badge(value)
 {
+	totalDiseasePages = 17;
+	totalStories = 7; 
+	totalResources = 32;
+
+	diseasePagesVisited = localStorage.getItem("countDiseases");
+	i = parseInt(diseasePagesVisited);
+
+	storyPagesVisited = localStorage.getItem("countStories");
+	j = parseInt(storyPagesVisited);
+
+	resourcePagesVisited = localStorage.getItem("countResources");
+	k = parseInt(resourcePagesVisited);
+
 		//In order to be more efficient, the function first checks what color badge it will be looking at.
 		
 	if(value.indexOf("blue") > -1)
 	{
 		if(value == "blue1")
 		{
-			if(localStorage.getItem("blue1") == "false")
+			if(localStorage.getItem("blue1") == "false" && i/totalDiseasePages < 0.25)
 			{
 				swal({   title: "Keep Learning!",  text: "Try checking out some disease pages!",   imageUrl: "question_blue.png" });
 			}
@@ -300,7 +313,7 @@ function eval_badge(value)
 		
 		if(value == "blue2")
 		{
-			if(localStorage.getItem("blue2") == "false")
+			if(localStorage.getItem("blue2") == "false" && i/totalDiseasePages < 0.50)
 			{
 				swal({   title: "Keep Learning!",  text: "Try checking out some disease pages!",   imageUrl: "question_blue.png" });
 			}
@@ -308,7 +321,7 @@ function eval_badge(value)
 		
 		if(value == "blue3")
 		{
-			if(localStorage.getItem("blue3") == "false")
+			if(localStorage.getItem("blue3") == "false" && i/totalDiseasePages < 0.75)
 			{
 				swal({   title: "Keep Learning!",  text: "Try checking out some disease pages!",   imageUrl: "question_blue.png" });
 			}
@@ -316,7 +329,7 @@ function eval_badge(value)
 		
 		if(value == "blue4")
 		{
-			if(localStorage.getItem("blue4") == "false")
+			if(localStorage.getItem("blue4") == "false" && i/totalDiseasePages < 1)
 			{
 				swal({   title: "Keep Learning!",  text: "Try checking out some disease pages!",   imageUrl: "question_blue.png" });
 			}
@@ -327,33 +340,33 @@ function eval_badge(value)
 		{
 			if(value == "green1")
 			{
-				if(localStorage.getItem("green1") == "false")
+				if(localStorage.getItem("green1") == "false" && i/totalDiseasePages < 0.25)
 				{
-					swal({   title: "Keep Learning!",  text: "Try exploring out some charities!",   imageUrl: "question_green.png" });
+					swal({   title: "Keep Learning!",  text: "Try exploring out some stories!",   imageUrl: "question_green.png" });
 				}
 			}
 			
 			if(value == "green2")
 			{
-				if(localStorage.getItem("green2") == "false")
+				if(localStorage.getItem("green2") == "false" && i/totalDiseasePages < 0.50)
 				{
-					swal({   title: "Keep Learning!",  text: "Try exploring out some charities!",   imageUrl: "question_green.png" });
+					swal({   title: "Keep Learning!",  text: "Try exploring out some stories!",   imageUrl: "question_green.png" });
 				}
 			}
 			
 			if(value == "green3")
 			{
-				if(localStorage.getItem("green3") == "false")
+				if(localStorage.getItem("green3") == "false" && i/totalDiseasePages < 0.75)
 				{
-					swal({   title: "Keep Learning!",  text: "Try exploring out some charities!",   imageUrl: "question_green.png" });
+					swal({   title: "Keep Learning!",  text: "Try exploring out some stories!",   imageUrl: "question_green.png" });
 				}
 			}
 			
 			if(value == "green4")
 			{
-				if(localStorage.getItem("green4") == "false")
+				if(localStorage.getItem("green4") == "false" && i/totalDiseasePages < 1)
 				{
-					swal({   title: "Keep Learning!",  text: "Try exploring out some charities!",   imageUrl: "question_green.png" });
+					swal({   title: "Keep Learning!",  text: "Try exploring out some stories!",   imageUrl: "question_green.png" });
 				}
 			}
 		}	
@@ -362,7 +375,7 @@ function eval_badge(value)
 		{
 			if(value == "red1")
 			{
-				if(localStorage.getItem("red1") == "false")
+				if(localStorage.getItem("red1") == "false" && i/totalDiseasePages < 0.25)
 				{
 					swal({   title: "Keep Learning!",  text: "Try using the explore page!",   imageUrl: "question_red.png" });
 				}
@@ -370,7 +383,7 @@ function eval_badge(value)
 			
 			if(value == "red2")
 			{
-				if(localStorage.getItem("red2") == "false")
+				if(localStorage.getItem("red2") == "false" && i/totalDiseasePages < 0.50)
 				{
 					swal({   title: "Keep Learning!",  text: "Try using the explore page!",   imageUrl: "question_red.png" });
 				}
@@ -378,7 +391,7 @@ function eval_badge(value)
 			
 			if(value == "red3")
 			{
-				if(localStorage.getItem("red3") == "false")
+				if(localStorage.getItem("red3") == "false" && i/totalDiseasePages < 0.75)
 				{
 					swal({   title: "Keep Learning!",  text: "Try using the explore page!",   imageUrl: "question_red.png" });
 				}
@@ -386,7 +399,7 @@ function eval_badge(value)
 			
 			if(value == "red4")
 			{
-				if(localStorage.getItem("red4") == "false")
+				if(localStorage.getItem("red4") == "false" && i/totalDiseasePages < 1)
 				{
 					swal({   title: "Keep Learning!",  text: "Try using the explore page!",   imageUrl: "question_red.png" });
 				}
@@ -3307,7 +3320,7 @@ function incrementStory(personName){
 			tfcount++;
 
 			if (tfcount == 1){
-				badgeAnimation("25.png", "You earned this badge for viewing 25% percent of stories pages!");
+				badgeAnimation("25_green.png", "You earned this badge for viewing 25% percent of stories pages!");
 			}
 
 			localStorage.setItem("tfStories", tfcount);
@@ -3326,7 +3339,7 @@ function incrementStory(personName){
 			fcount++;
 
 			if (fcount == 1){
-				badgeAnimation("50.png", "You earned this badge for viewing 50% percent of stories pages!");
+				badgeAnimation("50_green.png", "You earned this badge for viewing 50% percent of stories pages!");
 			}
 
 			localStorage.setItem("fStories", fcount);
@@ -3345,7 +3358,7 @@ function incrementStory(personName){
 			sfcount++;
 
 			if (sfcount == 1){
-				badgeAnimation("75.png", "You earned this badge for viewing 75% percent of stories pages!");
+				badgeAnimation("75_green.png", "You earned this badge for viewing 75% percent of stories pages!");
 			}
 
 			localStorage.setItem("sfStories", sfcount);
@@ -3413,7 +3426,7 @@ function incrementResources(resourceName){
 			tfcount++;
 
 			if (tfcount == 1){
-				badgeAnimation("25.png", "You earned this badge for viewing 25% percent of resource pages!");
+				badgeAnimation("25_red.png", "You earned this badge for viewing 25% percent of resource pages!");
 			}
 
 			localStorage.setItem("tfResources", tfcount);
@@ -3432,7 +3445,7 @@ function incrementResources(resourceName){
 			fcount++;
 
 			if (fcount == 1){
-				badgeAnimation("50.png", "You earned this badge for viewing 50% percent of resource pages!");
+				badgeAnimation("50_red.png", "You earned this badge for viewing 50% percent of resource pages!");
 			}
 
 			localStorage.setItem("fResources", fcount);
@@ -3451,7 +3464,7 @@ function incrementResources(resourceName){
 			sfcount++;
 
 			if (sfcount == 1){
-				badgeAnimation("75.png", "You earned this badge for viewing 75% percent of resource pages!");
+				badgeAnimation("75_red.png", "You earned this badge for viewing 75% percent of resource pages!");
 			}
 
 			localStorage.setItem("sfResources", sfcount);
@@ -3479,6 +3492,71 @@ function incrementResources(resourceName){
 	}
 
 	localStorage.setItem(resourceName, j);
+
+}
+
+function checkBadges(){
+	totalDiseasePages = 17;
+	totalStories = 7; 
+	totalResources = 32;
+
+	diseasePagesVisited = localStorage.getItem("countDiseases");
+	i = parseInt(diseasePagesVisited);
+
+	if (i/totalDiseasePages >= 0.25){
+		document.getElementById("first_blue_badge").src="25.png";
+		document.getElementById("first_blue_badge").onClick="";
+	}
+
+	if (i/totalDiseasePages >= 0.50){
+		document.getElementById("second_blue_badge").src="50.png";
+	}
+
+	if (i/totalDiseasePages >= 0.75){
+		document.getElementById("third_blue_badge").src="75.png";
+	}
+
+	if (i/totalDiseasePages >= 1){
+		document.getElementById("fourth_blue_badge").src="100.png";
+	}
+
+	storyPagesVisited = localStorage.getItem("countStories");
+	j = parseInt(storyPagesVisited);
+
+	if (j/totalStories >= 0.25){
+		document.getElementById("first_green_badge").src="25_green.png";
+	}
+
+	if (j/totalStories >= 0.50){
+		document.getElementById("second_green_badge").src="50_green.png";
+	}
+
+	if (j/totalStories >= 0.75){
+		document.getElementById("third_green_badge").src="75_green.png";
+	}
+
+	if (j/totalStories >= 1){
+		document.getElementById("fourth_green_badge").src="100.png";
+	}
+
+	resourcePagesVisited = localStorage.getItem("countResources");
+	k = parseInt(resourcePagesVisited);
+
+	if (k/totalResources >= 0.25){
+		document.getElementById("first_red_badge").src="25_red.png";
+	}
+
+	if (k/totalResources >= 0.50){
+		document.getElementById("second_red_badge").src="50_red.png";
+	}
+
+	if (k/totalResources >= 0.75){
+		document.getElementById("third_red_badge").src="75_red.png";
+	}
+
+	if (k/totalResources >= 1){
+		document.getElementById("fourth_red_badge").src="100.png";
+	}
 
 }
 
