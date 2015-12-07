@@ -132,6 +132,15 @@
         <script rel = "text/javascript" src = "js/index.js"></script>
         <script rel = "text/javascript" src = "sweetalert.min.js"></script>
         <script rel = "text/javascript" src = "fastclick.js"></script>
+        <script>
+            jQuery(document).ready(function($){
+                var ua = navigator.userAgent.toLowerCase();
+                var isAndroid = ua.indexOf("android") > -1;
+                if(isAndroid) {
+                    window.location = 'donate.html';
+                }
+            });
+        </script>
 		
 		<!-- DROP DOWN MENU BEGIN -->
 		<script type="text/javascript">
